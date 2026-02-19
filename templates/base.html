@@ -36,6 +36,8 @@
     {# Canonical URL #}
     {% if current_url is defined %}
     <link rel="canonical" href="{{ current_url | safe }}">
+    <link rel="alternate" hreflang="en" href="{{ current_url | safe }}">
+    <link rel="alternate" hreflang="x-default" href="{{ current_url | safe }}">
     {% endif %}
 
     {# ===== Open Graph / Facebook ===== #}
@@ -119,13 +121,30 @@
                 "url": "{{ config.base_url | safe }}",
                 "name": "{{ config.title }}",
                 "description": "{{ config.description }}",
-                {% if config.extra.author is defined %}
-                "author": {
-                    "@type": "{% if config.extra.author_type is defined %}{{ config.extra.author_type }}{% else %}Person{% endif %}",
-                    "name": "{{ config.extra.author }}"
+                "publisher": {
+                    "@id": "https://zentinelproxy.io/#organization"
                 },
-                {% endif %}
-                "inLanguage": "{{ lang | default(value='en') }}"
+                "inLanguage": "{{ lang | default(value='en') }}",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": {
+                        "@type": "EntryPoint",
+                        "urlTemplate": "{{ config.base_url | safe }}?q={search_term_string}"
+                    },
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://zentinelproxy.io/#organization",
+                "name": "{{ config.extra.author | default(value='raskell.io') }}",
+                "url": "https://zentinelproxy.io",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://zentinelproxy.io/img/og-image.png",
+                    "width": 1200,
+                    "height": 630
+                }
             },
             {
                 "@type": "WebPage",
@@ -161,12 +180,12 @@
                 {% if page.updated is defined and page.updated %}
                 "dateModified": "{{ page.updated | date(format='%Y-%m-%dT%H:%M:%S') }}",
                 {% endif %}
-                {% if config.extra.author is defined %}
                 "author": {
-                    "@type": "{% if config.extra.author_type is defined %}{{ config.extra.author_type }}{% else %}Person{% endif %}",
-                    "name": "{{ config.extra.author }}"
+                    "@id": "https://zentinelproxy.io/#organization"
                 },
-                {% endif %}
+                "publisher": {
+                    "@id": "https://zentinelproxy.io/#organization"
+                },
                 {% if page.taxonomies.tags is defined %}
                 "keywords": "{{ page.taxonomies.tags | join(sep=', ') }}",
                 {% endif %}
