@@ -13,9 +13,7 @@
 {% endblock %}
 
 {% block nav_buttons %}
-{% if mode == "docs" or mode == "book" %}
 {% include "partials/nav-buttons.html" %}
-{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -29,15 +27,15 @@
                     <h1>{{ page.title }}</h1>
                     <div class="post-meta">
                         <div class="meta-line">
-                            {% if config.extra.author or page.extra.author %}
-                            <span class="author">{{ page.extra.author | default(value=config.extra.author) }}</span>
+                            {% if config.extra.author.name or page.extra.author %}
+                            <span class="author">{{ page.extra.author | default(value=config.extra.author.name) }}</span>
                             {% endif %}
                             {% if page.date %}
-                            {% if config.extra.author or page.extra.author %}<span class="separator">·</span>{% endif %}
+                            {% if config.extra.author.name or page.extra.author %}<span class="separator">·</span>{% endif %}
                             <time>{{ page.date | date(format="%B %d, %Y") }}</time>
                             {% endif %}
                             {% if page.reading_time %}
-                            {% if page.date or config.extra.author or page.extra.author %}<span class="separator">·</span>{% endif %}
+                            {% if page.date or config.extra.author.name or page.extra.author %}<span class="separator">·</span>{% endif %}
                             <span class="reading-time">{{ page.reading_time }} min read</span>
                             {% endif %}
                         </div>
@@ -105,8 +103,8 @@
     </div>
 
     {# Hidden metadata for structured data #}
-    {% if config.extra.author is defined and config.extra.author %}
-    <meta itemprop="author" content="{{ config.extra.author }}">
+    {% if config.extra.author.name is defined and config.extra.author.name %}
+    <meta itemprop="author" content="{{ config.extra.author.name }}">
     {% endif %}
     {% if page.updated is defined and page.updated %}
     <meta itemprop="dateModified" content="{{ page.updated | date(format='%Y-%m-%d') }}">

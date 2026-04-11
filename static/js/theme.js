@@ -121,7 +121,13 @@
         // Cycle to next theme
         const newTheme = cycleTheme();
         saveTheme(newTheme);
+
+        // Disable transitions so backgrounds/borders repaint instantly
+        document.documentElement.classList.add('theme-transition-off');
         applyTheme(newTheme);
+        // Force reflow, then re-enable transitions
+        document.documentElement.offsetHeight;
+        document.documentElement.classList.remove('theme-transition-off');
 
         // Add animation class
         button.classList.add('animating');

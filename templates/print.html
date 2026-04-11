@@ -216,7 +216,7 @@
         {% endfor %}
 
         <footer class="print-page__footer">
-            <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author | default(value=config.title) }}</p>
+            <p>&copy; {{ now() | date(format="%Y") }} {{ config.extra.author.name | default(value=config.title) }}</p>
         </footer>
     </div>
 

@@ -25,8 +25,8 @@
     {% endif %}
 
     {# Author #}
-    {% if config.extra.author is defined %}
-    <meta name="author" content="{{ config.extra.author }}">
+    {% if config.extra.author.name is defined %}
+    <meta name="author" content="{{ config.extra.author.name }}">
     {% endif %}
 
     {# Robots #}
@@ -137,7 +137,7 @@
             {
                 "@type": "Organization",
                 "@id": "https://zentinelproxy.io/#organization",
-                "name": "{{ config.extra.author | default(value='raskell.io') }}",
+                "name": "{{ config.extra.author.name | default(value='raskell.io') }}",
                 "url": "https://zentinelproxy.io",
                 "logo": {
                     "@type": "ImageObject",

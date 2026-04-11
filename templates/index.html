@@ -156,7 +156,7 @@
             </nav>
         </div>
         <div class="product-footer__bottom">
-            <p>&copy; {{ now() | date(format='%Y') }} {% if config.extra.author %}<a href="{{ config.extra.author_url | default(value='#') }}">{{ config.extra.author }}</a>{% endif %}. {{ config.extra.product.license | default(value="") }}</p>
+            <p>&copy; {{ now() | date(format='%Y') }} {% if config.extra.author.name %}<a href="{{ config.extra.author_url | default(value='#') }}">{{ config.extra.author.name }}</a>{% endif %}. {{ config.extra.product.license | default(value="") }}</p>
         </div>
     </div>
 </footer>

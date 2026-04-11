@@ -80,13 +80,22 @@ $ctp-latte: (
 :root,
 [data-theme="dark"] {
   @include apply-theme($ctp-mocha);
-  --color-scheme: dark;
+  color-scheme: dark;
 }
 
 // Light theme palette
 [data-theme="light"] {
   @include apply-theme($ctp-latte);
-  --color-scheme: light;
+  color-scheme: light;
+}
+
+// Disable all transitions during theme switch to prevent stale backgrounds/borders.
+// The theme-transition-off class is toggled briefly by theme.js.
+.theme-transition-off,
+.theme-transition-off *,
+.theme-transition-off *::before,
+.theme-transition-off *::after {
+  transition: none !important;
 }
 
 // -----------------------------------------------------------------------------
