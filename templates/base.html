@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="{{ lang | default(value='en') }}" data-theme="dark" prefix="og: https://ogp.me/ns#">
+<html lang="{{ lang | default(value='en') }}" prefix="og: https://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
+    <script>
+    (function(){var s='auto';try{s=localStorage.getItem('tanuki-theme')||'auto'}catch(e){}
+    var t=s==='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):s;
+    document.documentElement.setAttribute('data-theme',t);
+    document.documentElement.setAttribute('data-theme-setting',s)})();
+    </script>
 
     {# ===== Primary Meta Tags ===== #}
     <title>{% block title %}{{ page.title | default(value=section.title) | default(value=config.title) }}{% endblock %} | {{ config.title }}</title>
