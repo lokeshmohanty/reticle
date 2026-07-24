@@ -243,8 +243,8 @@
     {# ===== Stylesheets ===== #}
     <link rel="stylesheet" href="{{ get_url(path='style.css') | safe }}">
 
-    {# Syntax highlighting #}
-    {% if config.markdown.highlight_code is defined and config.markdown.highlight_code %}
+    {# Syntax highlighting (Zola 0.22+ class-based highlighting) #}
+    {% if config.markdown.highlighting.style is defined and config.markdown.highlighting.style == "class" %}
     <link rel="stylesheet" href="{{ get_url(path='syntax-light.css') | safe }}" media="(prefers-color-scheme: light)">
     <link rel="stylesheet" href="{{ get_url(path='syntax-dark.css') | safe }}" media="(prefers-color-scheme: dark)">
     {% endif %}
