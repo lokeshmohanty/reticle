@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     <script>
-    (function(){var s='auto';try{s=localStorage.getItem('tanuki-theme')||'auto'}catch(e){}
+    (function(){var s='auto';try{s=localStorage.getItem('tanuki-theme')||localStorage.getItem('ThemeColorScheme')||'auto'}catch(e){}
     var t=s==='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):s;
     document.documentElement.setAttribute('data-theme',t);
-    document.documentElement.setAttribute('data-theme-setting',s)})();
+    document.documentElement.setAttribute('data-theme-setting',s);
+    document.documentElement.setAttribute('data-user-color-scheme',t)})();
     </script>
 
     {# ===== Primary Meta Tags ===== #}
@@ -272,21 +273,17 @@
     {# lokeshmohanty style 3-way theme toggle for site/blog mode #}
     <script>
         (function() {
-            var colorSchemeKey = 'ThemeColorScheme';
-            var colorSchemeItem = localStorage.getItem(colorSchemeKey) || 'auto';
+            var colorSchemeItem = 'auto';
+            try { colorSchemeItem = localStorage.getItem('tanuki-theme') || localStorage.getItem('ThemeColorScheme') || 'auto'; } catch(e) {}
             var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
             // Set theme setting (light/dark/auto)
             document.documentElement.dataset.themeSetting = colorSchemeItem;
 
             // Set effective theme (light/dark)
-            if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
-                document.documentElement.dataset.userColorScheme = 'dark';
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.dataset.userColorScheme = 'light';
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
+            var effectiveTheme = (colorSchemeItem === 'dark' || (colorSchemeItem === 'auto' && supportDarkMode)) ? 'dark' : 'light';
+            document.documentElement.dataset.userColorScheme = effectiveTheme;
+            document.documentElement.setAttribute('data-theme', effectiveTheme);
         })();
     </script>
     {% else %}
@@ -294,12 +291,13 @@
     <script>
         (function() {
             try {
-                var stored = localStorage.getItem('tanuki-theme') || 'auto';
+                var stored = localStorage.getItem('tanuki-theme') || localStorage.getItem('ThemeColorScheme') || 'auto';
                 var theme = stored === 'auto'
                     ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
                     : stored;
                 document.documentElement.setAttribute('data-theme', theme);
                 document.documentElement.setAttribute('data-theme-setting', stored);
+                document.documentElement.setAttribute('data-user-color-scheme', theme);
             } catch(e) {}
         })();
     </script>

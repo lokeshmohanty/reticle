@@ -6,13 +6,14 @@
 (function() {
   'use strict';
 
-  const STORAGE_KEY = 'tanuki-theme';
+  const PRIMARY_STORAGE_KEY = 'tanuki-theme';
+  const FALLBACK_STORAGE_KEY = 'ThemeColorScheme';
   const THEMES = ['light', 'dark', 'auto'];
 
   // Get stored theme or default to auto
   function getStoredTheme() {
     try {
-      return localStorage.getItem(STORAGE_KEY) || 'auto';
+      return localStorage.getItem(PRIMARY_STORAGE_KEY) || localStorage.getItem(FALLBACK_STORAGE_KEY) || 'auto';
     } catch (e) {
       return 'auto';
     }
@@ -31,12 +32,14 @@
     const effective = getEffectiveTheme(theme);
     document.documentElement.setAttribute('data-theme', effective);
     document.documentElement.setAttribute('data-theme-setting', theme);
+    document.documentElement.setAttribute('data-user-color-scheme', effective);
   }
 
   // Save theme preference
   function saveTheme(theme) {
     try {
-      localStorage.setItem(STORAGE_KEY, theme);
+      localStorage.setItem(PRIMARY_STORAGE_KEY, theme);
+      localStorage.setItem(FALLBACK_STORAGE_KEY, theme);
     } catch (e) {
       // Storage not available
     }
