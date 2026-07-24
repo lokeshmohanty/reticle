@@ -7,11 +7,10 @@ compile_sass = true
 build_search_index = true
 generate_feeds = false
 
-[markdown]
-highlight_code = true
-highlight_theme = "base16-ocean-dark"
+[markdown.highlighting]
+theme = "catppuccin-mocha"
 
 [extra]
 mode = "book"
-github = "https://github.com/raskell-io/tanuki"
+github = "https://github.com/lokeshmohanty/tanuki"
 show_theme_toggle = true

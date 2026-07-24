@@ -21,11 +21,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install mise
-        uses: jdx/mise-action@v2
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
 
       - name: Build all examples
-        run: mise run build
+        run: nix-shell --run "./build.sh"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

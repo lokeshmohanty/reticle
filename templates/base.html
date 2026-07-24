@@ -143,7 +143,7 @@
             {
                 "@type": "Organization",
                 "@id": "https://zentinelproxy.io/#organization",
-                "name": "{{ config.extra.author.name | default(value='raskell.io') }}",
+                "name": "{{ config.extra.author.name | default(value='lokeshmohanty') }}",
                 "url": "https://zentinelproxy.io",
                 "logo": {
                     "@type": "ImageObject",
@@ -269,7 +269,7 @@
     {# ===== Theme script (inline to prevent flash) ===== #}
     {% set mode = config.extra.mode | default(value="site") %}
     {% if mode == "site" or mode == "blog" %}
-    {# raskell.io style 3-way theme toggle for site/blog mode #}
+    {# lokeshmohanty style 3-way theme toggle for site/blog mode #}
     <script>
         (function() {
             var colorSchemeKey = 'ThemeColorScheme';
@@ -407,14 +407,14 @@
 
     {# Scripts #}
     {% if mode == "site" or mode == "blog" %}
-    {# raskell.io style scripts for site/blog mode #}
+    {# lokeshmohanty style scripts for site/blog mode #}
     <script src="{{ get_url(path='js/anchors.js') | safe }}"></script>
     <script src="{{ get_url(path='js/scroll-to-top.js') | safe }}"></script>
 
     {% if config.build_search_index %}
     <script src="{{ get_url(path='elasticlunr.min.js') | safe }}"></script>
     <script src="{{ get_url(path='search_index.en.js') | safe }}"></script>
-    <script src="{{ get_url(path='js/search-raskell.js') | safe }}"></script>
+    <script src="{{ get_url(path='js/search-lokeshmohanty.js') | safe }}"></script>
     {% endif %}
     {% else %}
     {# Original tanuki scripts for docs/book/product modes #}

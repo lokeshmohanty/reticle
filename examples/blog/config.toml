@@ -1,7 +1,7 @@
 # Tanuki Theme - Blog/Personal Site Example
 base_url = "/tanuki/blog"
-title = "Alex Chen"
-description = "Software developer writing about web technologies, design, and the craft of building things."
+title = "Lokesh Mohanty"
+description = "PhD researcher and engineer writing about autonomous systems, web technologies, and software design."
 theme = "tanuki"
 compile_sass = true
 build_search_index = true
@@ -12,9 +12,8 @@ taxonomies = [
     { name = "tags", feed = true },
 ]
 
-[markdown]
-highlight_code = true
-highlight_theme = "base16-ocean-dark"
+[markdown.highlighting]
+theme = "catppuccin-mocha"
 
 [extra]
 mode = "blog"
@@ -23,26 +22,24 @@ show_about_section = true
 
 # Author info
 [extra.author]
-name = "Alex Chen"
-bio = "Software developer and open source enthusiast."
-# avatar = "images/avatar.jpg"
+name = "Lokesh Mohanty"
+bio = "PhD researcher in autonomous systems & software engineer."
 
 # Hero section
 [extra.hero]
-title = "Hey, I'm Alex"
-subtitle = "I build things for the web and write about what I learn along the way."
+title = "Hey, I'm Lokesh"
+subtitle = "I research autonomous systems, build software, and write about what I learn."
 [extra.hero.cta]
 text = "Read the blog"
 url = "/tanuki/blog/blog/"
 
 # About preview on homepage
 [extra.about]
-summary = "I'm a software developer passionate about web technologies, developer experience, and building tools that make other developers' lives easier."
+summary = "I'm a PhD researcher studying lifelong learning for planning in autonomous systems and a software engineer passionate about developer experience and AI systems."
 
 # Social links
 [extra.social]
-github = "https://github.com/username"
-twitter = "https://twitter.com/username"
+github = "https://github.com/lokeshmohanty"
 
 # Navigation
 [[extra.nav]]

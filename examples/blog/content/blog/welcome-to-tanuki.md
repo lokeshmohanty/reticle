@@ -43,7 +43,7 @@ Press `/` anywhere to search your entire site instantly. Powered by Elasticlunr,
 Adding Tanuki to your project is simple:
 
 ```bash
-git submodule add https://github.com/raskell-io/tanuki themes/tanuki
+git submodule add https://github.com/lokeshmohanty/tanuki themes/tanuki
 ```
 
 Then add to your `config.toml`:

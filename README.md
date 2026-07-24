@@ -24,10 +24,10 @@
 </p>
 
 <p align="center">
-  <a href="https://tanuki.raskell.io">Live Demo</a> •
-  <a href="https://tanuki.raskell.io/docs/">Documentation</a> •
-  <a href="https://tanuki.raskell.io/book/">Book Example</a> •
-  <a href="https://tanuki.raskell.io/blog/">Blog Example</a>
+  <a href="https://lokeshmohanty.github.io/tanuki">Live Demo</a> •
+  <a href="https://lokeshmohanty.github.io/tanuki/docs/">Documentation</a> •
+  <a href="https://lokeshmohanty.github.io/tanuki/book/">Book Example</a> •
+  <a href="https://lokeshmohanty.github.io/tanuki/blog/">Blog Example</a>
 </p>
 
 <hr />
@@ -53,13 +53,13 @@
 
 ```bash
 cd your-zola-site
-git clone https://github.com/raskell-io/tanuki themes/tanuki
+git clone https://github.com/lokeshmohanty/tanuki themes/tanuki
 ```
 
 Or as a git submodule:
 
 ```bash
-git submodule add https://github.com/raskell-io/tanuki themes/tanuki
+git submodule add https://github.com/lokeshmohanty/tanuki themes/tanuki
 ```
 
 ## Quick Start
@@ -138,6 +138,23 @@ name = "About"
 url = "/about/"
 ```
 
+## Development
+
+This repository includes a `shell.nix` file for Nix users.
+
+```bash
+# Enter development shell (provides Zola and Just)
+nix-shell
+
+# Serve example sites with Just
+just serve-blog   # Serve blog on http://127.0.0.1:1113
+just serve-docs   # Serve docs on http://127.0.0.1:1111
+just serve-book   # Serve book on http://127.0.0.1:1112
+
+# Build all example sites
+just build
+```
+
 ## Keyboard Shortcuts
 
 | Key | Action |
@@ -152,6 +169,7 @@ Modern browsers (Chrome 88+, Firefox 78+, Safari 14+, Edge 88+)
 
 ## Credits
 
+- [Tanuki Theme](https://github.com/raskell-io/tanuki) by [raskell.io](https://raskell.io) (Raffael Schneider) — Original theme creator
 - [Catppuccin](https://catppuccin.com) — Color palette
 - [Geist](https://vercel.com/font) — Typography
 - [Lucide](https://lucide.dev) — Icons
@@ -163,4 +181,4 @@ Modern browsers (Chrome 88+, Firefox 78+, Safari 14+, Edge 88+)
 
 ---
 
-<p align="center">Made with care by <a href="https://raskell.io">raskell.io</a></p>
+<p align="center">Made with care by <a href="https://lokeshmohanty.dev">Lokesh Mohanty</a></p>

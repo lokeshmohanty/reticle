@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -e
+
+echo "Building example sites..."
+
+# Clean and create output directory
+rm -rf public
+mkdir -p public
+
+# Build docs example
+echo "Building docs example..."
+cd examples/docs
+zola build --output-dir ../../public/docs
+cd ../..
+
+# Build book example
+echo "Building book example..."
+cd examples/book
+zola build --output-dir ../../public/book
+cd ../..
+
+# Build blog example
+echo "Building blog example..."
+cd examples/blog
+zola build --output-dir ../../public/blog
+cd ../..
+
+# Copy the combined index.html
+echo "Copying index.html..."
+cp examples/index.html public/index.html
+
+# Create symlinks for local testing (base_url has /tanuki/ prefix for GitHub Pages)
+mkdir -p public/tanuki
+ln -sf ../docs public/tanuki/docs
+ln -sf ../book public/tanuki/book
+ln -sf ../blog public/tanuki/blog
+ln -sf ../index.html public/tanuki/index.html
+
+echo "Build complete! Output in public/"

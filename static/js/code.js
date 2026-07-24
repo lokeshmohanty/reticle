@@ -1,5 +1,5 @@
 // =============================================================================
-// Code Blocks - Raskell Theme
+// Code Blocks - Lokesh Mohanty Theme
 // Copy button, language labels, and KDL playground integration
 // =============================================================================
 
@@ -104,7 +104,7 @@
   let wasmLoadPromise = null;
 
   // Playground URL
-  const PLAYGROUND_URL = 'https://sentinel.raskell.io/playground/';
+  const PLAYGROUND_URL = 'https://sentinel.lokeshmohanty.dev/playground/';
 
   function getLanguageName(lang) {
     if (!lang) return null;

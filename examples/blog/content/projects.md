@@ -17,7 +17,7 @@ A modern, flexible theme for Zola with support for documentation, e-books, and b
 
 - **Stack**: Zola, Sass, JavaScript
 - **Features**: Dark/light themes, search, responsive design
-- [View on GitHub](https://github.com/raskell-io/tanuki)
+- [View on GitHub](https://github.com/lokeshmohanty/tanuki)
 
 ---
 
