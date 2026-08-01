@@ -8,7 +8,7 @@
     <!-- Primary Meta Tags -->
     <title>Reticle - An Opinionated Zola Theme for Documentation, Books, and Blogs</title>
     <meta name="title" content="Reticle - An Opinionated Zola Theme for Documentation, Books, and Blogs">
-    <meta name="description" content="A beautiful, accessible Zola theme with four modes: documentation sites, distraction-free books, card-based blogs, and product landing pages. Features Catppuccin colors, Geist typography, dark/light themes, and built-in search.">
+    <meta name="description" content="A beautiful, accessible Zola theme with four modes: documentation sites, distraction-free books, card-based blogs, and product landing pages. Features instrument-reading color system, three-role typography, dark/light themes, and built-in search.">
     <meta name="keywords" content="Zola theme, static site generator, documentation theme, book theme, blog theme, Catppuccin, Geist font, dark mode, light mode, responsive design, accessible, open source">
     <meta name="author" content="lokeshmohanty.dev">
     <meta name="robots" content="index, follow">
@@ -22,7 +22,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://reticle.lokeshmohanty.dev/">
     <meta property="og:title" content="Reticle - An Opinionated Zola Theme">
-    <meta property="og:description" content="Beautiful, accessible Zola theme with four modes: documentation, books, blogs, and product landing pages. Features Catppuccin colors, Geist typography, and built-in search.">
+    <meta property="og:description" content="Beautiful, accessible Zola theme with four modes: documentation, books, blogs, and product landing pages. Features instrument-reading color system, three-role typography, and built-in search.">
     <meta property="og:image" content="https://reticle.lokeshmohanty.dev/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -34,13 +34,13 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://reticle.lokeshmohanty.dev/">
     <meta name="twitter:title" content="Reticle - An Opinionated Zola Theme">
-    <meta name="twitter:description" content="Beautiful, accessible Zola theme with four modes: documentation, books, blogs, and product landing pages. Features Catppuccin colors, Geist typography, and built-in search.">
+    <meta name="twitter:description" content="Beautiful, accessible Zola theme with four modes: documentation, books, blogs, and product landing pages. Features instrument-reading color system, three-role typography, and built-in search.">
     <meta name="twitter:image" content="https://reticle.lokeshmohanty.dev/og-image.png">
     <meta name="twitter:image:alt" content="Reticle theme preview showing documentation, book, and blog modes">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/avif" href="./docs/img/reticle-icon.avif">
-    <link rel="apple-touch-icon" href="./docs/img/reticle-icon.avif">
+    <link rel="icon" type="image/avif" href="./docs/img/reticle-logo.png">
+    <link rel="apple-touch-icon" href="./docs/img/reticle-logo.png">
 
     <!-- JSON-LD Structured Data for SEO and AEO -->
     <script type="application/ld+json">
@@ -103,8 +103,8 @@
                 "runtimePlatform": "Zola Static Site Generator",
                 "featureList": [
                     "Four layout modes: Documentation, Book, Blog, and Product",
-                    "Catppuccin color palette with soothing pastel colors",
-                    "Geist variable font for clean typography",
+                    "Instrument-reading color palette with semantic state accents",
+                    "Three-role typography (Space Grotesk, Nunito, Cascadia Code)",
                     "Dark and light theme with system preference detection",
                     "Resizable sidebar with localStorage persistence",
                     "Built-in full-text search",
@@ -166,7 +166,7 @@
                         "name": "What is Reticle?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Reticle is an opinionated Zola theme designed for documentation sites, technical books, developer blogs, and product landing pages. It features four distinct layout modes, Catppuccin colors, Geist typography, and is fully accessible and responsive."
+                            "text": "Reticle is an opinionated Zola theme designed for documentation sites, technical books, developer blogs, and product landing pages. It features four distinct layout modes, instrument-reading color system, Space Grotesk & Nunito typography, and is fully accessible and responsive."
                         }
                     },
                     {
@@ -305,23 +305,31 @@
         }
 
         @font-face {
-            font-family: 'Geist';
-            src: url('./docs/fonts/Geist-Variable.woff2') format('woff2');
-            font-weight: 100 900;
+            font-family: 'Space Grotesk Variable';
+            src: url('./docs/fonts/SpaceGrotesk-Variable.woff2') format('woff2');
+            font-weight: 300 700;
             font-style: normal;
             font-display: swap;
         }
 
         @font-face {
-            font-family: 'Geist Mono';
-            src: url('./docs/fonts/GeistMono-Variable.woff2') format('woff2');
-            font-weight: 100 900;
+            font-family: 'Nunito Variable';
+            src: url('./docs/fonts/Nunito-Variable.woff2') format('woff2');
+            font-weight: 200 1000;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'Cascadia Code Variable';
+            src: url('./docs/fonts/CascadiaCode-Variable.woff2') format('woff2');
+            font-weight: 200 700;
             font-style: normal;
             font-display: swap;
         }
 
         body {
-            font-family: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Nunito Variable', system-ui, sans-serif;
             background: var(--bg);
             color: var(--text);
             min-height: 100vh;
@@ -540,7 +548,7 @@
         }
 
         .install-cmd {
-            font-family: 'Geist Mono', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+            font-family: 'Cascadia Code Variable', ui-monospace, monospace;
             font-size: 0.875rem;
             color: var(--text);
             white-space: nowrap;
@@ -819,7 +827,7 @@
         }
 
         .config-code__filename {
-            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-family: 'Cascadia Code Variable', ui-monospace, monospace;
             font-size: 0.8125rem;
             color: var(--text-muted);
         }
@@ -863,7 +871,7 @@
             margin: 0;
             padding: 1.25rem;
             overflow-x: auto;
-            font-family: 'Geist Mono', ui-monospace, monospace;
+            font-family: 'Cascadia Code Variable', ui-monospace, monospace;
             font-size: 0.8125rem;
             line-height: 1.6;
         }
@@ -1291,15 +1299,15 @@
         <header class="hero" role="banner" aria-labelledby="hero-title">
             <div class="container">
                 <div class="hero__logo">
-                    <img src="./docs/img/reticle-icon.avif" alt="Reticle mascot" width="48" height="48">
-                    <span><ruby>Reticle<rp>(</rp><rt lang="ja"></rt><rp>)</rp></ruby></span>
+                    <img src="./docs/img/reticle-logo.png" alt="Reticle mascot" width="48" height="48">
+                    <span>Reticle</span>
                 </div>
                 <h1 id="hero-title" class="hero__title">An Opinionated Zola Theme</h1>
                 <p class="hero__subtitle">
                     Beautiful, accessible, and thoughtfully designed. Reticle makes decisions so you can focus on content.
                 </p>
                 <p class="hero__tagline">
-                    Soothing <strong>Catppuccin</strong> pastels meet crisp <strong>Geist</strong> typography
+                    Precision <strong>Space Grotesk</strong> display meets <strong>Nunito</strong> prose & <strong>Cascadia Code</strong> tabular data
                 </p>
 
                 <div class="install-widget">
@@ -1460,7 +1468,7 @@
                         </div>
                         <div class="feature__content">
                             <h3 class="feature__title">Standing on Giants</h3>
-                            <p class="feature__description">Built with battle-tested community favorites: Geist's elegant typography, Lucide's crisp icons, Catppuccin's soothing palette, and elasticlunr's lightning search. Why reinvent what the community has perfected?</p>
+                            <p class="feature__description">Built with battle-tested community favorites: Space Grotesk & Nunito typography, Lucide icons, instrument-reading palette, and elasticlunr's lightning search. Why reinvent what the community has perfected?</p>
                         </div>
                     </li>
 
@@ -1747,7 +1755,7 @@
                 <div class="footer__brand" itemscope itemtype="https://schema.org/Organization">
                     <div class="footer__logo-wrapper" aria-hidden="true">
                         <div class="footer__logo-glow"></div>
-                        <img class="footer__logo" src="./docs/img/reticle-icon.avif" alt="Reticle logo" width="64" height="64">
+                        <img class="footer__logo" src="./docs/img/reticle-logo.png" alt="Reticle logo" width="64" height="64">
                     </div>
                     <div class="footer__tagline">
                         <p class="footer__title" itemprop="name">An opinionated Zola theme<br>for docs, books, blogs, and products</p>

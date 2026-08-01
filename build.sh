@@ -25,6 +25,11 @@ cd examples/blog
 zola build --output-dir ../../public/blog
 cd ../..
 
+# Copy static images and assets
+echo "Copying static images..."
+mkdir -p public/docs/img
+cp -r static/img/* public/docs/img/
+
 # Copy the combined index.html
 echo "Copying index.html..."
 cp examples/index.html public/index.html
