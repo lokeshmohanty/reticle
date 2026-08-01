@@ -1,8 +1,8 @@
-# Tanuki Theme - Book Mode Example
-base_url = "/tanuki/book"
-title = "The Tanuki Guide"
-description = "E-book example for the Tanuki theme"
-theme = "tanuki"
+# Reticle Theme - Book Mode Example
+base_url = "/reticle/book"
+title = "The Reticle Guide"
+description = "E-book example for the Reticle theme"
+theme = "reticle"
 compile_sass = true
 build_search_index = true
 generate_feeds = false
@@ -12,5 +12,5 @@ theme = "catppuccin-mocha"
 
 [extra]
 mode = "book"
-github = "https://github.com/lokeshmohanty/tanuki"
+github = "https://github.com/lokeshmohanty/reticle"
 show_theme_toggle = true

@@ -1,12 +1,12 @@
 // =============================================================================
-// Theme Toggle - Tanuki Theme (タヌキ)
+// Theme Toggle - Reticle Theme ()
 // Nintendo-inspired whimsical interactions
 // =============================================================================
 
 (function() {
   'use strict';
 
-  const PRIMARY_STORAGE_KEY = 'tanuki-theme';
+  const PRIMARY_STORAGE_KEY = 'reticle-theme';
   const FALLBACK_STORAGE_KEY = 'ThemeColorScheme';
   const THEMES = ['light', 'dark', 'auto'];
 
@@ -89,10 +89,10 @@
 
   // Add sparkle animation
   function addSparkleStyles() {
-    if (document.getElementById('tanuki-sparkle-styles')) return;
+    if (document.getElementById('reticle-sparkle-styles')) return;
 
     const style = document.createElement('style');
-    style.id = 'tanuki-sparkle-styles';
+    style.id = 'reticle-sparkle-styles';
     style.textContent = `
       @keyframes sparkle-fly {
         0% {

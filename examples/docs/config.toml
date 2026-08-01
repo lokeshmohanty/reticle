@@ -1,8 +1,8 @@
-# Tanuki Theme - Documentation Mode Example
-base_url = "/tanuki/docs"
+# Reticle Theme - Documentation Mode Example
+base_url = "/reticle/docs"
 title = "Acme SDK"
 description = "Official documentation for the Acme SDK"
-theme = "tanuki"
+theme = "reticle"
 compile_sass = true
 build_search_index = true
 generate_feeds = false
@@ -15,15 +15,15 @@ theme = "catppuccin-mocha"
 
 [extra]
 mode = "docs"
-github = "https://github.com/lokeshmohanty/tanuki"
-edit_url = "https://github.com/lokeshmohanty/tanuki/edit/main/examples/docs/content"
+github = "https://github.com/lokeshmohanty/reticle"
+edit_url = "https://github.com/lokeshmohanty/reticle/edit/main/examples/docs/content"
 show_theme_toggle = true
 
 # Version picker (docs mode only)
 [extra.versions]
 current = "1.2.0"
 list = [
-    { version = "1.2.0", url = "/tanuki/docs/", label = "latest" },
-    { version = "1.1.0", url = "/tanuki/docs/v1.1/" },
-    { version = "1.0.0", url = "/tanuki/docs/v1.0/" },
+    { version = "1.2.0", url = "/reticle/docs/", label = "latest" },
+    { version = "1.1.0", url = "/reticle/docs/v1.1/" },
+    { version = "1.0.0", url = "/reticle/docs/v1.0/" },
 ]

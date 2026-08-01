@@ -1,4 +1,4 @@
-# Justfile for Tanuki Zola Theme
+# Justfile for Reticle Zola Theme
 
 # Default recipe: list available recipes
 default:

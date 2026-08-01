@@ -1,13 +1,13 @@
-# Tanuki Theme for Zola (タヌキ)
-# A versatile, Catppuccin-themed Zola theme for documentation, e-books, blogs, and product landing pages
+# Reticle Theme for Zola
+# An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.
 
-name = "tanuki"
-description = "A whimsical, Nintendo-inspired Zola theme with Catppuccin colors, Geist typography, and Lucide icons. Supports documentation (with versioning), e-books, blog/landing pages, and product landing pages. Named after the playful Japanese raccoon dog (タヌキ)."
+name = "reticle"
+description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages."
 license = "MIT"
-homepage = "https://github.com/lokeshmohanty/tanuki"
-repository = "https://github.com/lokeshmohanty/tanuki"
+homepage = "https://github.com/lokeshmohanty/reticle"
+repository = "https://github.com/lokeshmohanty/reticle"
 min_version = "0.19.0"
-demo = "https://lokeshmohanty.github.io/tanuki"
+demo = "https://lokeshmohanty.github.io/reticle"
 
 [author]
 name = "Lokesh Mohanty"
@@ -37,15 +37,15 @@ show_hero = true
 #
 # icon = "assets/product-icon.png"
 # tagline = "A powerful tool for modern developers"
-# footer_description = "Built with care by Lokesh Mohanty."
+# footer_description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages."
 # license = "Licensed under Apache 2.0."
 # install_command = "curl -fsSL https://lokeshmohanty.dev/myproduct | sh"
 # install_alternatives = "Or download from <a href='https://github.com/lokeshmohanty/myproduct/releases'>GitHub Releases</a>"
 # features_title = "Features"
 # features = [
-#   { title = "Fast", description = "Optimized for speed and efficiency.", icon = "<svg>...</svg>" },
-#   { title = "Secure", description = "Built with security best practices.", icon = "<svg>...</svg>" },
-#   { title = "Simple", description = "Easy to install and configure.", icon = "<svg>...</svg>" }
+#   { title = "Fast", description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.", icon = "<svg>...</svg>" },
+#   { title = "Secure", description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.", icon = "<svg>...</svg>" },
+#   { title = "Simple", description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.", icon = "<svg>...</svg>" }
 # ]
 # footer_links = [
 #   { title = "Resources", links = [

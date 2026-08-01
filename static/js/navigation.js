@@ -1,13 +1,13 @@
 // =============================================================================
-// Navigation - Tanuki Theme (タヌキ)
+// Navigation - Reticle Theme ()
 // Sidebar, keyboard navigation, ToC overlay, and mobile menu
 // =============================================================================
 
 (function() {
   'use strict';
 
-  const STORAGE_KEY_SIDEBAR = 'tanuki-sidebar-collapsed';
-  const STORAGE_KEY_SIDEBAR_WIDTH = 'tanuki-sidebar-width';
+  const STORAGE_KEY_SIDEBAR = 'reticle-sidebar-collapsed';
+  const STORAGE_KEY_SIDEBAR_WIDTH = 'reticle-sidebar-width';
 
   // =============================================================================
   // Sidebar (Docs Mode - Collapsible)

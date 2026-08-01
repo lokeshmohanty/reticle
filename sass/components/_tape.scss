@@ -1,0 +1,34 @@
+// =============================================================================
+// Margin Tape — the signature element
+// --------------------------------------------------------------------------
+// A 3px segmented rule down the left of a block whose colour is the state
+// of the thing beside it. It is what makes a list of items readable as a
+// status board without badges on every row.
+// =============================================================================
+
+.tape {
+  display: grid;
+  grid-template-columns: 3px 1fr;
+  gap: 0;
+}
+
+.tape__rail {
+  background: var(--rule-soft);
+  border-radius: 2px;
+}
+
+.tape__rail--proved {
+  background: var(--proved);
+}
+
+.tape__rail--obligation {
+  background: var(--obligation);
+}
+
+.tape__rail--blocking {
+  background: var(--blocking);
+}
+
+.tape__body {
+  padding-left: 1.15rem;
+}

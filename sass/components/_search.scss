@@ -151,7 +151,7 @@
   }
 
   &.selected {
-    background: rgba(203, 166, 247, 0.1);
+    background: color-mix(in srgb, var(--obligation) 10%, transparent);
   }
 }
 
@@ -160,7 +160,7 @@
   margin-bottom: 0.25rem;
 
   mark {
-    background: rgba(249, 226, 175, 0.4);
+    background: color-mix(in srgb, var(--obligation) 40%, transparent);
     color: inherit;
     padding: 0 0.15em;
     border-radius: 2px;
@@ -179,7 +179,7 @@
   line-height: var(--leading-relaxed);
 
   mark {
-    background: rgba(249, 226, 175, 0.3);
+    background: color-mix(in srgb, var(--obligation) 30%, transparent);
     color: inherit;
     padding: 0 0.1em;
     border-radius: 2px;

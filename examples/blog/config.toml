@@ -1,8 +1,8 @@
-# Tanuki Theme - Blog/Personal Site Example
-base_url = "/tanuki/blog"
+# Reticle Theme - Blog/Personal Site Example
+base_url = "/reticle/blog"
 title = "Lokesh Mohanty"
 description = "PhD researcher and engineer writing about autonomous systems, web technologies, and software design."
-theme = "tanuki"
+theme = "reticle"
 compile_sass = true
 build_search_index = true
 generate_feeds = true
@@ -31,7 +31,7 @@ title = "Hey, I'm Lokesh"
 subtitle = "I research autonomous systems, build software, and write about what I learn."
 [extra.hero.cta]
 text = "Read the blog"
-url = "/tanuki/blog/blog/"
+url = "/reticle/blog/blog/"
 
 # About preview on homepage
 [extra.about]
@@ -44,12 +44,12 @@ github = "https://github.com/lokeshmohanty"
 # Navigation
 [[extra.nav]]
 name = "Blog"
-url = "/tanuki/blog/blog/"
+url = "/reticle/blog/blog/"
 
 [[extra.nav]]
 name = "Projects"
-url = "/tanuki/blog/projects/"
+url = "/reticle/blog/projects/"
 
 [[extra.nav]]
 name = "About"
-url = "/tanuki/blog/about/"
+url = "/reticle/blog/about/"

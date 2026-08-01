@@ -29,11 +29,11 @@ cd ../..
 echo "Copying index.html..."
 cp examples/index.html public/index.html
 
-# Create symlinks for local testing (base_url has /tanuki/ prefix for GitHub Pages)
-mkdir -p public/tanuki
-ln -sf ../docs public/tanuki/docs
-ln -sf ../book public/tanuki/book
-ln -sf ../blog public/tanuki/blog
-ln -sf ../index.html public/tanuki/index.html
+# Create symlinks for local testing (base_url has /reticle/ prefix for GitHub Pages)
+mkdir -p public/reticle
+ln -sf ../docs public/reticle/docs
+ln -sf ../book public/reticle/book
+ln -sf ../blog public/reticle/blog
+ln -sf ../index.html public/reticle/index.html
 
 echo "Build complete! Output in public/"

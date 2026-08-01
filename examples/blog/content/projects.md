@@ -11,13 +11,13 @@ A selection of projects I've worked on—both personal experiments and contribut
 
 ---
 
-## Tanuki Theme
+## Reticle Theme
 
 A modern, flexible theme for Zola with support for documentation, e-books, and blogs.
 
 - **Stack**: Zola, Sass, JavaScript
 - **Features**: Dark/light themes, search, responsive design
-- [View on GitHub](https://github.com/lokeshmohanty/tanuki)
+- [View on GitHub](https://github.com/lokeshmohanty/reticle)
 
 ---
 

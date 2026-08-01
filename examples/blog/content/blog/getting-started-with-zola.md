@@ -1,6 +1,6 @@
 +++
 title = "Getting Started with Zola"
-description = "A quick introduction to Zola, the fast static site generator that powers Tanuki."
+description = "A quick introduction to Zola, the fast static site generator that powers Reticle."
 date = 2024-12-26
 [taxonomies]
 tags = ["tutorial", "zola"]
@@ -8,7 +8,7 @@ tags = ["tutorial", "zola"]
 
 # Getting Started with Zola
 
-Zola is a fast static site generator written in Rust. It's what powers the Tanuki theme, and it's a joy to work with.
+Zola is a fast static site generator written in Rust. It's what powers the Reticle theme, and it's a joy to work with.
 
 ## Why Zola?
 
@@ -123,7 +123,7 @@ Your complete site will be in the `public/` directory, ready to deploy anywhere.
 ## Next Steps
 
 - Read the [Zola documentation](https://www.getzola.org/documentation/)
-- Explore the [Tanuki theme documentation](/docs/)
+- Explore the [Reticle theme documentation](/docs/)
 - Join the [Zola Discord](https://discord.gg/WN8n6xqp)
 
 Happy building!

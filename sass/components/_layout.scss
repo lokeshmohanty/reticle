@@ -96,9 +96,9 @@
   margin-bottom: 1.5rem;
   background: linear-gradient(
     135deg,
-    var(--ctp-mauve) 0%,
-    var(--ctp-blue) 50%,
-    var(--ctp-teal) 100%
+    var(--obligation) 0%,
+    var(--obligation) 50%,
+    var(--proved) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -111,7 +111,7 @@
 
 .hero__subtitle {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
+  color: var(--ink-2);
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: var(--leading-relaxed);
@@ -148,14 +148,14 @@
 
 .card {
   padding: 1.5rem;
-  background: var(--color-bg-elevated);
-  border: 1px solid var(--color-border);
+  background: var(--card);
+  border: 1px solid var(--rule);
   border-radius: 16px;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   &:hover {
     transform: translateY(-4px);
-    border-color: var(--color-accent);
+    border-color: var(--obligation);
     box-shadow: var(--shadow-lg), var(--shadow-glow);
   }
 }
@@ -167,9 +167,9 @@
   width: 48px;
   height: 48px;
   margin-bottom: 1rem;
-  background: rgba(203, 166, 247, 0.1);
+  background: color-mix(in srgb, var(--obligation) 10%, transparent);
   border-radius: 12px;
-  color: var(--color-accent);
+  color: var(--obligation);
 
   svg {
     width: 24px;
@@ -185,7 +185,7 @@
 
 .card__description {
   font-size: var(--text-sm);
-  color: var(--color-text-secondary);
+  color: var(--ink-2);
   line-height: var(--leading-relaxed);
 }
 
@@ -202,7 +202,7 @@
 }
 
 .section--alt {
-  background: var(--color-bg-elevated);
+  background: var(--card);
 }
 
 .section__header {
@@ -221,7 +221,7 @@
 
 .section__description {
   font-size: var(--text-lg);
-  color: var(--color-text-secondary);
+  color: var(--ink-2);
   max-width: 600px;
   margin: 0 auto;
 }
@@ -233,8 +233,8 @@
 .footer {
   padding: 2rem 0;
   margin-top: auto;
-  border-top: 1px solid var(--color-border);
-  background: var(--color-bg-elevated);
+  border-top: 1px solid var(--rule);
+  background: var(--card);
 }
 
 .footer__content {
@@ -253,7 +253,7 @@
 
 .footer__copyright {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--ink-3);
 }
 
 .footer__links {
@@ -262,10 +262,10 @@
 
   a {
     font-size: var(--text-sm);
-    color: var(--color-text-secondary);
+    color: var(--ink-2);
 
     &:hover {
-      color: var(--color-accent);
+      color: var(--obligation);
     }
   }
 }

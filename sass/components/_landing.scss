@@ -21,19 +21,19 @@
   height: 120px;
   border-radius: 50%;
   margin-bottom: 1.5rem;
-  border: 3px solid var(--ctp-surface1);
+  border: 3px solid var(--rule-soft);
 }
 
 .hero__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ctp-text);
+  color: var(--ink);
   margin-bottom: 0.75rem;
 }
 
 .hero__subtitle {
   font-size: 1.25rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -51,7 +51,7 @@
 }
 
 .section--alt {
-  background: var(--ctp-mantle);
+  background: var(--paper-2);
 }
 
 .section__header {
@@ -65,7 +65,7 @@
 }
 
 .section__link {
-  color: var(--ctp-mauve);
+  color: var(--obligation);
   text-decoration: none;
   font-weight: 500;
   font-size: 0.9375rem;
@@ -86,13 +86,13 @@
 
 .card {
   padding: 1.5rem;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 12px;
-  border: 1px solid var(--ctp-surface1);
+  border: 1px solid var(--rule-soft);
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: var(--ctp-mauve);
+    border-color: var(--obligation);
     transform: translateY(-2px);
   }
 }
@@ -103,17 +103,17 @@
   margin-bottom: 0.5rem;
 
   a {
-    color: var(--ctp-text);
+    color: var(--ink);
     text-decoration: none;
 
     &:hover {
-      color: var(--ctp-mauve);
+      color: var(--obligation);
     }
   }
 }
 
 .card__description {
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   line-height: 1.5;
   margin-bottom: 0.75rem;
   font-size: 0.9375rem;
@@ -125,10 +125,10 @@
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.8125rem;
-  color: var(--ctp-subtext1);
+  color: var(--ink-2);
 
   time {
-    color: var(--ctp-subtext0);
+    color: var(--ink-3);
   }
 }
 
@@ -155,12 +155,12 @@
   h2 {
     font-size: 1.75rem;
     font-weight: 700;
-    color: var(--ctp-text);
+    color: var(--ink);
     margin-bottom: 1rem;
   }
 
   p {
-    color: var(--ctp-subtext0);
+    color: var(--ink-3);
     line-height: 1.6;
     margin-bottom: 1.5rem;
     font-size: 1.0625rem;
@@ -177,9 +177,9 @@
   padding: 4rem 2rem;
   background: linear-gradient(
     135deg,
-    var(--ctp-base) 0%,
-    var(--ctp-mantle) 50%,
-    var(--ctp-crust) 100%
+    var(--paper) 0%,
+    var(--paper-2) 50%,
+    var(--paper) 100%
   );
 
   .hero__content {
@@ -189,7 +189,7 @@
   .hero__icon {
     font-size: 4rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--ctp-mauve), var(--ctp-pink), var(--ctp-peach));
+    background: linear-gradient(135deg, var(--obligation), var(--obligation), var(--obligation));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -198,7 +198,7 @@
   .hero__title {
     margin-bottom: 1rem;
     font-size: 1rem;
-    color: var(--ctp-subtext0);
+    color: var(--ink-3);
     letter-spacing: 0.2em;
     text-transform: uppercase;
 
@@ -209,14 +209,14 @@
 
   .hero__subtitle {
     font-size: 1.5rem;
-    color: var(--ctp-text);
+    color: var(--ink);
     margin-bottom: 1rem;
     font-weight: 500;
   }
 
   .hero__tagline {
     font-size: 1.125rem;
-    color: var(--ctp-subtext0);
+    color: var(--ink-3);
     max-width: 600px;
     margin: 0 auto;
   }
@@ -225,7 +225,7 @@
 // Mode Cards Section
 .modes {
   padding: 6rem 2rem;
-  background: var(--ctp-mantle);
+  background: var(--paper-2);
 }
 
 .mode-grid {
@@ -239,42 +239,42 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background: var(--ctp-base);
+  background: var(--paper);
   border-radius: 16px;
-  border: 2px solid var(--ctp-surface0);
+  border: 2px solid var(--card);
   text-decoration: none;
   color: inherit;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 
   &:hover {
     transform: translateY(-8px);
-    border-color: var(--ctp-mauve);
+    border-color: var(--obligation);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 
     .mode-card__cta {
-      background: var(--ctp-mauve);
-      color: var(--ctp-base);
+      background: var(--obligation);
+      color: var(--paper);
     }
   }
 
   &--docs:hover {
-    border-color: var(--ctp-blue);
+    border-color: var(--obligation);
     .mode-card__cta {
-      background: var(--ctp-blue);
+      background: var(--obligation);
     }
   }
 
   &--book:hover {
-    border-color: var(--ctp-green);
+    border-color: var(--proved);
     .mode-card__cta {
-      background: var(--ctp-green);
+      background: var(--proved);
     }
   }
 
   &--blog:hover {
-    border-color: var(--ctp-peach);
+    border-color: var(--obligation);
     .mode-card__cta {
-      background: var(--ctp-peach);
+      background: var(--obligation);
     }
   }
 }
@@ -285,22 +285,22 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 16px;
   margin-bottom: 1.5rem;
-  color: var(--ctp-text);
+  color: var(--ink);
 }
 
 .mode-card__title {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
-  color: var(--ctp-text);
+  color: var(--ink);
 }
 
 .mode-card__description {
   flex: 1;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -308,10 +308,10 @@
 .mode-card__cta {
   display: inline-block;
   padding: 0.75rem 1.5rem;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 8px;
   font-weight: 500;
-  color: var(--ctp-text);
+  color: var(--ink);
   transition: all 0.2s ease;
   text-align: center;
 }
@@ -319,7 +319,7 @@
 // Features Section
 .features {
   padding: 6rem 2rem;
-  background: var(--ctp-base);
+  background: var(--paper);
 }
 
 .feature-grid {
@@ -340,21 +340,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--ctp-surface0), var(--ctp-surface1));
+  background: linear-gradient(135deg, var(--card), var(--rule-soft));
   border-radius: 12px;
   margin: 0 auto 1rem;
-  color: var(--ctp-mauve);
+  color: var(--obligation);
 }
 
 .feature__title {
   font-size: 1.125rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: var(--ctp-text);
+  color: var(--ink);
 }
 
 .feature__description {
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   font-size: 0.9375rem;
   line-height: 1.6;
 }
@@ -362,7 +362,7 @@
 // CTA Section
 .cta {
   padding: 6rem 2rem;
-  background: linear-gradient(135deg, var(--ctp-surface0), var(--ctp-mantle));
+  background: linear-gradient(135deg, var(--card), var(--paper-2));
   text-align: center;
 }
 
@@ -370,25 +370,25 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: var(--ctp-text);
+  color: var(--ink);
 }
 
 .cta__description {
   font-size: 1.125rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   margin-bottom: 2rem;
 }
 
 .cta__code {
   display: inline-block;
   padding: 1rem 2rem;
-  background: var(--ctp-crust);
+  background: var(--paper);
   border-radius: 8px;
   margin-bottom: 2rem;
   font-family: var(--font-mono);
   font-size: 0.9375rem;
-  color: var(--ctp-green);
-  border: 1px solid var(--ctp-surface0);
+  color: var(--proved);
+  border: 1px solid var(--card);
 }
 
 .cta__actions {
@@ -403,12 +403,12 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  color: var(--ctp-text);
+  color: var(--ink);
 }
 
 .section__subtitle {
   font-size: 1.125rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   text-align: center;
   margin-top: 0.5rem;
 }
@@ -433,13 +433,13 @@
 .blog-header__title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: var(--ctp-text);
+  color: var(--ink);
   margin-bottom: 0.5rem;
 }
 
 .blog-header__description {
   font-size: 1.125rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
 }
 
 .blog-posts {
@@ -451,13 +451,13 @@
 .blog-card {
   padding: 2rem;
   margin-bottom: 1.5rem;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 12px;
-  border: 1px solid var(--ctp-surface1);
+  border: 1px solid var(--rule-soft);
   transition: all 0.2s ease;
 
   &:hover {
-    border-color: var(--ctp-mauve);
+    border-color: var(--obligation);
     transform: translateY(-2px);
   }
 }
@@ -468,17 +468,17 @@
   margin-bottom: 0.75rem;
 
   a {
-    color: var(--ctp-text);
+    color: var(--ink);
     text-decoration: none;
 
     &:hover {
-      color: var(--ctp-mauve);
+      color: var(--obligation);
     }
   }
 }
 
 .blog-card__description {
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -489,10 +489,10 @@
   gap: 1rem;
   flex-wrap: wrap;
   font-size: 0.875rem;
-  color: var(--ctp-subtext1);
+  color: var(--ink-2);
 
   time {
-    color: var(--ctp-subtext0);
+    color: var(--ink-3);
   }
 }
 
@@ -505,10 +505,10 @@
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
-  background: var(--ctp-surface1);
+  background: var(--rule-soft);
   border-radius: 9999px;
   font-size: 0.75rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
 }
 
 .pagination {
@@ -526,20 +526,20 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 8px;
-  color: var(--ctp-text);
+  color: var(--ink);
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--ctp-surface1);
+    background: var(--rule-soft);
   }
 }
 
 .pagination__info {
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
   font-size: 0.875rem;
 }
 
@@ -558,7 +558,7 @@
 .taxonomy-single__title {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--ctp-text);
+  color: var(--ink);
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -575,14 +575,14 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.25rem;
-  background: var(--ctp-surface0);
+  background: var(--card);
   border-radius: 9999px;
   text-decoration: none;
-  color: var(--ctp-text);
+  color: var(--ink);
   transition: all 0.2s ease;
 
   &:hover {
-    background: var(--ctp-surface1);
+    background: var(--rule-soft);
     transform: translateY(-2px);
   }
 }
@@ -598,10 +598,10 @@
   min-width: 1.5rem;
   height: 1.5rem;
   padding: 0 0.5rem;
-  background: var(--ctp-surface1);
+  background: var(--rule-soft);
   border-radius: 9999px;
   font-size: 0.75rem;
-  color: var(--ctp-subtext0);
+  color: var(--ink-3);
 }
 
 // Responsive

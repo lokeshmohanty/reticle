@@ -15,12 +15,35 @@
 // =============================================================================
 
 [data-mode="blog"] {
+  // Full-width layout wrapper so the centered reading column can span 80% of
+  // the viewport (previously capped to a fixed 830px).
   .layout__main {
-    @include container(var(--width-content));
+    width: 100%;
+    max-width: none;
   }
 
   .main-content {
     padding-top: var(--space-4);
+  }
+
+  // Desktop: the reading column becomes a dynamic, centered 80% of the viewport.
+  // We only widen `.main-content`'s cap here — its base `width: 100%` and
+  // `margin: 0 auto` still handle the centering. Setting an explicit `width` on
+  // this flex item would break the auto-margin centering (content shifts left).
+  // Applies to bare page bodies (home/blog list) and, via the un-capped
+  // `.container`, to article/section pages too (see modes/_lokeshmohanty.scss).
+  //
+  // The surrounding canvas (this `.layout` element) is darkened to `crust` so
+  // the unused side gutters read as a darker frame, with the 80% column raised
+  // on the lighter `base` background.
+  @media screen and (min-width: 800px) {
+    background: var(--color-canvas);
+
+    .main-content {
+      max-width: 80%;
+      background: var(--color-bg);
+      border-radius: 12px;
+    }
   }
 }
 

@@ -1,0 +1,33 @@
+// =============================================================================
+// Chips — uppercase mono status tags
+// =============================================================================
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background: var(--neutral-bg);
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+
+.chip--proved {
+  background: var(--proved-bg);
+  color: var(--proved);
+}
+
+.chip--obligation {
+  background: var(--obligation-bg);
+  color: var(--obligation);
+}
+
+.chip--blocking {
+  background: var(--blocking-bg);
+  color: var(--blocking);
+}

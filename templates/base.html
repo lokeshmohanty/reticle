@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark light">
     <script>
-    (function(){var s='auto';try{s=localStorage.getItem('tanuki-theme')||localStorage.getItem('ThemeColorScheme')||'auto'}catch(e){}
+    (function(){var s='auto';try{s=localStorage.getItem('reticle-theme')||localStorage.getItem('ThemeColorScheme')||'auto'}catch(e){}
     var t=s==='auto'?(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'):s;
     document.documentElement.setAttribute('data-theme',t);
     document.documentElement.setAttribute('data-theme-setting',s);
@@ -251,8 +251,9 @@
     {% endif %}
 
     {# ===== Preload fonts ===== #}
-    <link rel="preload" href="{{ get_url(path='fonts/Geist-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{ get_url(path='fonts/GeistMono-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path='fonts/SpaceGrotesk-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path='fonts/Nunito-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ get_url(path='fonts/CascadiaCode-Variable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
 
     {# ===== Favicon ===== #}
     {% if config.extra.favicon %}
@@ -274,7 +275,7 @@
     <script>
         (function() {
             var colorSchemeItem = 'auto';
-            try { colorSchemeItem = localStorage.getItem('tanuki-theme') || localStorage.getItem('ThemeColorScheme') || 'auto'; } catch(e) {}
+            try { colorSchemeItem = localStorage.getItem('reticle-theme') || localStorage.getItem('ThemeColorScheme') || 'auto'; } catch(e) {}
             var supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
             // Set theme setting (light/dark/auto)
@@ -287,11 +288,11 @@
         })();
     </script>
     {% else %}
-    {# Original tanuki theme toggle for docs/book/product modes #}
+    {# Original reticle theme toggle for docs/book/product modes #}
     <script>
         (function() {
             try {
-                var stored = localStorage.getItem('tanuki-theme') || localStorage.getItem('ThemeColorScheme') || 'auto';
+                var stored = localStorage.getItem('reticle-theme') || localStorage.getItem('ThemeColorScheme') || 'auto';
                 var theme = stored === 'auto'
                     ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
                     : stored;
@@ -415,7 +416,7 @@
     <script src="{{ get_url(path='js/search-lokeshmohanty.js') | safe }}"></script>
     {% endif %}
     {% else %}
-    {# Original tanuki scripts for docs/book/product modes #}
+    {# Original reticle scripts for docs/book/product modes #}
     <script src="{{ get_url(path='js/theme.js') | safe }}" defer></script>
     <script src="{{ get_url(path='js/navigation.js') | safe }}" defer></script>
     <script src="{{ get_url(path='js/code.js') | safe }}" defer></script>

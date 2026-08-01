@@ -1,0 +1,36 @@
+# Reticle Dark — the default palette.
+#
+# Every colour below is a role, not a decoration. Change one and every part of
+# the client that means that thing changes with it. Copy this file to make your
+# own; `theme` in settings decides which one loads.
+#
+# Direction: an instrument reading of a document. Cool blueprint-paper ground,
+# petrol ink, and three semantic accents:
+#   proved     = confirmed / cleared / done        (teal)
+#   obligation = pending / owed / the UI accent     (violet)
+#   blocking   = destructive / blocking             (red)
+
+name = "Reticle Dark"
+color_scheme = "dark"
+
+[fonts]
+display = '"Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif'
+body    = '"Nunito Variable", ui-sans-serif, system-ui, sans-serif'
+mono    = '"Cascadia Code Variable", ui-monospace, "SFMono-Regular", Menlo, monospace'
+
+[colors]
+paper         = "#0c151a"
+paper_2       = "#111d24"
+card          = "#14222a"
+ink           = "#e6eef1"
+ink_2         = "#9fb2bb"
+ink_3         = "#708590"
+rule          = "#2a3d47"
+rule_soft     = "#1e2e37"
+proved        = "#5fc9b6"
+proved_bg     = "#10312d"
+obligation    = "#a99bf5"
+obligation_bg = "#241f47"
+blocking      = "#ef8377"
+blocking_bg   = "#3b1a17"
+neutral_bg    = "#1b2b33"

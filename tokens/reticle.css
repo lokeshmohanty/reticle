@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Reticle — portable design tokens
+   --------------------------------------------------------------------------
+   Import this file to get the full instrument-reading palette, three type
+   roles, and light/dark modes.  No build tools required.
+
+   Direction: an instrument reading of a document. Cool blueprint-paper
+   ground, petrol ink, and three semantic accents that carry meaning:
+     proved     (teal)   — confirmed, cleared, done
+     obligation (violet) — owed, pending, the UI accent + focus rings
+     blocking   (red)    — destructive, blocking (used sparingly)
+
+   Signature element: the margin tape — a 3px segmented rule down the left
+   of a block whose colour is the state of the thing beside it.
+   ========================================================================== */
+
+/* ── Type roles ─────────────────────────────────────────────────────────── */
+
+:root {
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Cascadia Code Variable", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --display-tracking: -0.03em;
+  --display-weight: 500;
+  --body-size: 1.075rem;
+  --body-leading: 1.66;
+}
+
+/* ── Dark palette (default) ─────────────────────────────────────────────── */
+
+:root {
+  --paper:      #0c151a;
+  --paper-2:    #111d24;
+  --card:       #14222a;
+
+  --ink:        #e6eef1;
+  --ink-2:      #9fb2bb;
+  --ink-3:      #708590;
+
+  --rule:       #2a3d47;
+  --rule-soft:  #1e2e37;
+
+  --proved:        #5fc9b6;
+  --proved-bg:     #10312d;
+  --obligation:    #a99bf5;
+  --obligation-bg: #241f47;
+  --blocking:      #ef8377;
+  --blocking-bg:   #3b1a17;
+  --neutral-bg:    #1b2b33;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px -12px rgb(0 0 0 / 0.8);
+  color-scheme: dark;
+}
+
+/* ── Light palette ──────────────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --paper:      #e7ecef;
+    --paper-2:    #f6f9fa;
+    --card:       #fdfefe;
+
+    --ink:        #0d1a22;
+    --ink-2:      #4a5c65;
+    --ink-3:      #7c8d95;
+
+    --rule:       #c2d0d7;
+    --rule-soft:  #d8e2e7;
+
+    --proved:        #0e6b5e;
+    --proved-bg:     #dcece8;
+    --obligation:    #5340bb;
+    --obligation-bg: #e3e0f5;
+    --blocking:      #a01c12;
+    --blocking-bg:   #f4dedb;
+    --neutral-bg:    #dde5e9;
+
+    --shadow: 0 1px 2px rgb(13 26 34 / 0.05), 0 6px 20px -12px rgb(13 26 34 / 0.25);
+    color-scheme: light;
+  }
+}
+
+[data-theme="light"] {
+  --paper:      #e7ecef;
+  --paper-2:    #f6f9fa;
+  --card:       #fdfefe;
+
+  --ink:        #0d1a22;
+  --ink-2:      #4a5c65;
+  --ink-3:      #7c8d95;
+
+  --rule:       #c2d0d7;
+  --rule-soft:  #d8e2e7;
+
+  --proved:        #0e6b5e;
+  --proved-bg:     #dcece8;
+  --obligation:    #5340bb;
+  --obligation-bg: #e3e0f5;
+  --blocking:      #a01c12;
+  --blocking-bg:   #f4dedb;
+  --neutral-bg:    #dde5e9;
+
+  --shadow: 0 1px 2px rgb(13 26 34 / 0.05), 0 6px 20px -12px rgb(13 26 34 / 0.25);
+  color-scheme: light;
+}

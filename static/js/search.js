@@ -1,5 +1,5 @@
 // =============================================================================
-// Search - Tanuki Theme
+// Search - Reticle Theme
 // Elasticlunr-powered search with keyboard navigation
 // =============================================================================
 

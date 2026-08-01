@@ -1,6 +1,6 @@
 // =============================================================================
-// Tanuki Theme - Main Stylesheet (タヌキ)
-// A flexible Zola theme with Catppuccin colors and design system patterns
+// Reticle Theme — Main Stylesheet
+// An instrument-reading design system for Zola
 // =============================================================================
 
 // -----------------------------------------------------------------------------
@@ -19,8 +19,6 @@
 @import "base/reset";
 @import "base/typography";
 
-// Note: base/catppuccin is now replaced by tokens/colors
-
 // -----------------------------------------------------------------------------
 // Components
 // Shared UI components used across all modes
@@ -34,6 +32,8 @@
 @import "components/search";
 @import "components/landing";
 @import "components/print";
+@import "components/tape";
+@import "components/chips";
 
 // -----------------------------------------------------------------------------
 // Mode-Specific Styles

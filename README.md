@@ -1,21 +1,20 @@
 <div align="center">
 
 <h1 align="center">
-  <img src="static/img/tanuki-icon.png" alt="tanuki mascot" width="96" />
+  <img src="static/img/reticle-icon.png" alt="reticle mascot" width="96" />
   <br>
-  Tanuki
+  Reticle
 </h1>
 
 <p align="center">
-  <em>An opinionated Zola theme for documentation, books, and blogs.</em><br>
-  <em>Beautiful, accessible, and thoughtfully designed.</em>
+  <em>An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.</em>
 </p>
 
 <p align="center">
   <a href="https://www.getzola.org/">
     <img alt="Zola" src="https://img.shields.io/badge/Zola-0.19+-000000?logo=zola&logoColor=white&style=for-the-badge">
   </a>
-  <a href="https://catppuccin.com/">
+  <a href="https://reticle.com/">
     <img alt="Catppuccin" src="https://img.shields.io/badge/Catppuccin-cba6f7?style=for-the-badge">
   </a>
   <a href="LICENSE">
@@ -24,17 +23,17 @@
 </p>
 
 <p align="center">
-  <a href="https://lokeshmohanty.github.io/tanuki">Live Demo</a> •
-  <a href="https://lokeshmohanty.github.io/tanuki/docs/">Documentation</a> •
-  <a href="https://lokeshmohanty.github.io/tanuki/book/">Book Example</a> •
-  <a href="https://lokeshmohanty.github.io/tanuki/blog/">Blog Example</a>
+  <a href="https://lokeshmohanty.github.io/reticle">Live Demo</a> •
+  <a href="https://lokeshmohanty.github.io/reticle/docs/">Documentation</a> •
+  <a href="https://lokeshmohanty.github.io/reticle/book/">Book Example</a> •
+  <a href="https://lokeshmohanty.github.io/reticle/blog/">Blog Example</a>
 </p>
 
 <hr />
 
 </div>
 
-![Tanuki Theme](screenshot.png)
+![Reticle Theme](screenshot.png)
 
 ## Features
 
@@ -53,13 +52,13 @@
 
 ```bash
 cd your-zola-site
-git clone https://github.com/lokeshmohanty/tanuki themes/tanuki
+git clone https://github.com/lokeshmohanty/reticle themes/reticle
 ```
 
 Or as a git submodule:
 
 ```bash
-git submodule add https://github.com/lokeshmohanty/tanuki themes/tanuki
+git submodule add https://github.com/lokeshmohanty/reticle themes/reticle
 ```
 
 ## Quick Start
@@ -69,7 +68,7 @@ git submodule add https://github.com/lokeshmohanty/tanuki themes/tanuki
 ```toml
 base_url = "https://docs.example.com"
 title = "My Project Docs"
-theme = "tanuki"
+theme = "reticle"
 build_search_index = true
 
 [markdown]
@@ -94,7 +93,7 @@ list = [
 ```toml
 base_url = "https://book.example.com"
 title = "The Complete Guide"
-theme = "tanuki"
+theme = "reticle"
 build_search_index = true
 
 [markdown]
@@ -111,7 +110,7 @@ github = "https://github.com/you/book"
 ```toml
 base_url = "https://blog.example.com"
 title = "My Blog"
-theme = "tanuki"
+theme = "reticle"
 generate_feeds = true
 
 taxonomies = [
@@ -169,8 +168,8 @@ Modern browsers (Chrome 88+, Firefox 78+, Safari 14+, Edge 88+)
 
 ## Credits
 
-- [Tanuki Theme](https://github.com/raskell-io/tanuki) by [raskell.io](https://raskell.io) (Raffael Schneider) — Original theme creator
-- [Catppuccin](https://catppuccin.com) — Color palette
+- [Reticle Theme](https://github.com/raskell-io/reticle) by [raskell.io](https://raskell.io) (Raffael Schneider) — Original theme creator
+- [Catppuccin](https://reticle.com) — Color palette
 - [Geist](https://vercel.com/font) — Typography
 - [Lucide](https://lucide.dev) — Icons
 - [Zola](https://www.getzola.org) — Static site generator

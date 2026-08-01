@@ -80,7 +80,7 @@ button {
 
 // Focus styles
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--obligation);
   outline-offset: 2px;
 }
 
@@ -92,8 +92,8 @@ button {
   transform: translateX(-50%);
   z-index: 9999;
   padding: var(--space-sm) var(--space-lg);
-  background: var(--color-accent);
-  color: var(--ctp-base);
+  background: var(--obligation);
+  color: var(--paper);
   font-weight: 600;
   text-decoration: none;
   border-radius: 0 0 var(--radius-md) var(--radius-md);
@@ -102,7 +102,7 @@ button {
 
   &:focus {
     top: 0;
-    outline: 2px solid var(--ctp-text);
+    outline: 2px solid var(--ink);
     outline-offset: 2px;
   }
 }
@@ -122,8 +122,8 @@ button {
 
 // Selection
 ::selection {
-  background: var(--ctp-mauve);
-  color: var(--ctp-base);
+  background: var(--obligation);
+  color: var(--paper);
 }
 
 // Scrollbar styling (WebKit)
@@ -133,20 +133,20 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-elevated);
+  background: var(--card);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--ctp-surface2);
+  background: var(--rule);
   border-radius: 4px;
 
   &:hover {
-    background: var(--ctp-overlay0);
+    background: var(--ink-3);
   }
 }
 
 // Firefox scrollbar
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--ctp-surface2) var(--color-bg-elevated);
+  scrollbar-color: var(--rule) var(--card);
 }

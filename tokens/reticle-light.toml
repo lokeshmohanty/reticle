@@ -1,0 +1,28 @@
+# Reticle Light — the light complement to the default palette.
+#
+# Same three semantic accents, darkened enough to hold their contrast on paper.
+
+name = "Reticle Light"
+color_scheme = "light"
+
+[fonts]
+display = '"Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif'
+body    = '"Nunito Variable", ui-sans-serif, system-ui, sans-serif'
+mono    = '"Cascadia Code Variable", ui-monospace, "SFMono-Regular", Menlo, monospace'
+
+[colors]
+paper         = "#e7ecef"
+paper_2       = "#f6f9fa"
+card          = "#fdfefe"
+ink           = "#0d1a22"
+ink_2         = "#4a5c65"
+ink_3         = "#7c8d95"
+rule          = "#c2d0d7"
+rule_soft     = "#d8e2e7"
+proved        = "#0e6b5e"
+proved_bg     = "#dcece8"
+obligation    = "#5340bb"
+obligation_bg = "#e3e0f5"
+blocking      = "#a01c12"
+blocking_bg   = "#f4dedb"
+neutral_bg    = "#dde5e9"

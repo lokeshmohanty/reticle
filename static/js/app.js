@@ -5,7 +5,7 @@
 (function() {
   'use strict';
 
-  const PRIMARY_STORAGE_KEY = 'tanuki-theme';
+  const PRIMARY_STORAGE_KEY = 'reticle-theme';
   const FALLBACK_STORAGE_KEY = 'ThemeColorScheme';
   const THEMES = ['light', 'dark', 'auto'];
 

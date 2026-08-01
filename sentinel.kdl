@@ -1,4 +1,4 @@
-// Sentinel configuration for serving Tanuki theme examples
+// Sentinel configuration for serving Reticle theme examples
 // Usage: sentinel -c sentinel.kdl
 
 system {
@@ -14,12 +14,12 @@ listeners {
         protocol "http"
         request-timeout-secs 30
         keepalive-timeout-secs 60
-        default-route "tanuki"
+        default-route "reticle"
     }
 }
 
 routes {
-    route "tanuki" {
+    route "reticle" {
         priority "normal"
         service_type "static"
 

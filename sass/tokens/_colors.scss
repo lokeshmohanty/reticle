@@ -1,95 +1,99 @@
 // =============================================================================
-// Design Tokens: Colors
-// Catppuccin palette with semantic mappings
+// Design Tokens: Colors — the instrument-reading palette
+// --------------------------------------------------------------------------
+// Direction: an instrument reading of a document. Cool blueprint-paper ground,
+// petrol ink, and three semantic accents that carry meaning:
+//   proved     (teal)   — confirmed, cleared, done
+//   obligation (violet) — owed, pending, the UI accent + focus rings
+//   blocking   (red)    — destructive, blocking (used sparingly; it must stay loud)
+//
+// The signature element is the margin tape: a 3px segmented rule down the left
+// of a block whose colour is the state of the thing beside it.
 // =============================================================================
 
 // -----------------------------------------------------------------------------
-// Catppuccin Mocha (Dark)
+// Dark palette (default)
 // -----------------------------------------------------------------------------
-$ctp-mocha: (
-  "rosewater": #f5e0dc,
-  "flamingo": #f2cdcd,
-  "pink": #f5c2e7,
-  "mauve": #cba6f7,
-  "red": #f38ba8,
-  "maroon": #eba0ac,
-  "peach": #fab387,
-  "yellow": #f9e2af,
-  "green": #a6e3a1,
-  "teal": #94e2d5,
-  "sky": #89dceb,
-  "sapphire": #74c7ec,
-  "blue": #89b4fa,
-  "lavender": #b4befe,
-  "text": #cdd6f4,
-  "subtext1": #bac2de,
-  "subtext0": #a6adc8,
-  "overlay2": #9399b2,
-  "overlay1": #7f849c,
-  "overlay0": #6c7086,
-  "surface2": #585b70,
-  "surface1": #45475a,
-  "surface0": #313244,
-  "base": #1e1e2e,
-  "mantle": #181825,
-  "crust": #11111b
-);
-
-// -----------------------------------------------------------------------------
-// Catppuccin Latte (Light)
-// -----------------------------------------------------------------------------
-$ctp-latte: (
-  "rosewater": #dc8a78,
-  "flamingo": #dd7878,
-  "pink": #ea76cb,
-  "mauve": #8839ef,
-  "red": #d20f39,
-  "maroon": #e64553,
-  "peach": #fe640b,
-  "yellow": #df8e1d,
-  "green": #40a02b,
-  "teal": #179299,
-  "sky": #04a5e5,
-  "sapphire": #209fb5,
-  "blue": #1e66f5,
-  "lavender": #7287fd,
-  "text": #4c4f69,
-  "subtext1": #5c5f77,
-  "subtext0": #6c6f85,
-  "overlay2": #7c7f93,
-  "overlay1": #8c8fa1,
-  "overlay0": #9ca0b0,
-  "surface2": #acb0be,
-  "surface1": #bcc0cc,
-  "surface0": #ccd0da,
-  "base": #eff1f5,
-  "mantle": #e6e9ef,
-  "crust": #dce0e8
-);
-
-// -----------------------------------------------------------------------------
-// CSS Custom Properties (applied to :root)
-// -----------------------------------------------------------------------------
-@mixin apply-theme($palette) {
-  @each $name, $color in $palette {
-    --ctp-#{$name}: #{$color};
-  }
-}
-
-// Default (dark theme) - applied to :root, overridden by [data-theme]
 :root,
 [data-theme="dark"] {
-  @include apply-theme($ctp-mocha);
+  --paper:      #0c151a;
+  --paper-2:    #111d24;
+  --card:       #14222a;
+
+  --ink:        #e6eef1;
+  --ink-2:      #9fb2bb;
+  --ink-3:      #708590;
+
+  --rule:       #2a3d47;
+  --rule-soft:  #1e2e37;
+
+  --proved:        #5fc9b6;
+  --proved-bg:     #10312d;
+  --obligation:    #a99bf5;
+  --obligation-bg: #241f47;
+  --blocking:      #ef8377;
+  --blocking-bg:   #3b1a17;
+  --neutral-bg:    #1b2b33;
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px -12px rgb(0 0 0 / 0.8);
   color-scheme: dark;
 }
 
-// Light theme palette
+// -----------------------------------------------------------------------------
+// Light palette
+// -----------------------------------------------------------------------------
 [data-theme="light"] {
-  @include apply-theme($ctp-latte);
+  --paper:      #e7ecef;
+  --paper-2:    #f6f9fa;
+  --card:       #fdfefe;
+
+  --ink:        #0d1a22;
+  --ink-2:      #4a5c65;
+  --ink-3:      #7c8d95;
+
+  --rule:       #c2d0d7;
+  --rule-soft:  #d8e2e7;
+
+  --proved:        #0e6b5e;
+  --proved-bg:     #dcece8;
+  --obligation:    #5340bb;
+  --obligation-bg: #e3e0f5;
+  --blocking:      #a01c12;
+  --blocking-bg:   #f4dedb;
+  --neutral-bg:    #dde5e9;
+
+  --shadow: 0 1px 2px rgb(13 26 34 / 0.05), 0 6px 20px -12px rgb(13 26 34 / 0.25);
   color-scheme: light;
 }
 
-// Disable all transitions during theme switch to prevent stale backgrounds/borders.
+// System-preference fallback (for users who haven't toggled explicitly)
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --paper:      #e7ecef;
+    --paper-2:    #f6f9fa;
+    --card:       #fdfefe;
+
+    --ink:        #0d1a22;
+    --ink-2:      #4a5c65;
+    --ink-3:      #7c8d95;
+
+    --rule:       #c2d0d7;
+    --rule-soft:  #d8e2e7;
+
+    --proved:        #0e6b5e;
+    --proved-bg:     #dcece8;
+    --obligation:    #5340bb;
+    --obligation-bg: #e3e0f5;
+    --blocking:      #a01c12;
+    --blocking-bg:   #f4dedb;
+    --neutral-bg:    #dde5e9;
+
+    --shadow: 0 1px 2px rgb(13 26 34 / 0.05), 0 6px 20px -12px rgb(13 26 34 / 0.25);
+    color-scheme: light;
+  }
+}
+
+// Disable all transitions during theme switch to prevent stale backgrounds.
 // The theme-transition-off class is toggled briefly by theme.js.
 .theme-transition-off,
 .theme-transition-off *,
@@ -99,50 +103,55 @@ $ctp-latte: (
 }
 
 // -----------------------------------------------------------------------------
-// Semantic Color Mappings
-// Use these in components, not raw Catppuccin colors
-// These use var() references so they automatically update with theme changes
+// Backward-compatibility aliases
+// Components using the old --color-* names will continue to work while they
+// are migrated to direct semantic tokens.
 // -----------------------------------------------------------------------------
 :root {
-  // Text colors
-  --color-text: var(--ctp-text);
-  --color-text-secondary: var(--ctp-subtext1);
-  --color-text-muted: var(--ctp-subtext0);
-  --color-text-subtle: var(--ctp-overlay1);
-  --color-heading: var(--ctp-text);
+  --color-text:           var(--ink);
+  --color-text-secondary: var(--ink-2);
+  --color-text-muted:     var(--ink-3);
+  --color-text-subtle:    var(--ink-3);
+  --color-text-faint:     var(--ink-3);
+  --color-heading:        var(--ink);
 
-  // Backgrounds
-  --color-bg: var(--ctp-base);
-  --color-bg-alt: var(--ctp-mantle);
-  --color-bg-surface: var(--ctp-mantle);
-  --color-bg-elevated: var(--ctp-surface0);
-  --color-bg-overlay: var(--ctp-surface1);
-  --color-bg-hover: var(--ctp-surface1);
+  --color-bg:             var(--paper);
+  --color-bg-alt:         var(--paper-2);
+  --color-bg-surface:     var(--paper-2);
+  --color-bg-elevated:    var(--card);
+  --color-bg-overlay:     var(--card);
+  --color-bg-hover:       var(--neutral-bg);
+  --color-canvas:         var(--paper);
 
-  // Borders
-  --color-border: var(--ctp-surface0);
-  --color-border-muted: var(--ctp-surface1);
+  --color-border:         var(--rule);
+  --color-border-muted:   var(--rule-soft);
+  --color-border-subtle:  var(--rule-soft);
 
-  // Accents
-  --color-accent: var(--ctp-mauve);
-  --color-accent-hover: var(--ctp-pink);
-  --color-link: var(--ctp-blue);
-  --color-link-hover: var(--ctp-sapphire);
-  --color-highlight: var(--ctp-teal);
+  --color-accent:         var(--obligation);
+  --color-accent-hover:   var(--obligation);
+  --color-link:           var(--obligation);
+  --color-link-hover:     var(--obligation);
+  --color-highlight:      var(--proved);
 
-  // Status colors
-  --color-success: var(--ctp-green);
-  --color-warning: var(--ctp-yellow);
-  --color-error: var(--ctp-red);
-  --color-info: var(--ctp-blue);
-}
+  --color-success:        var(--proved);
+  --color-warning:        var(--obligation);
+  --color-error:          var(--blocking);
+  --color-info:           var(--obligation);
 
-// -----------------------------------------------------------------------------
-// Light Theme Overrides (must come after :root semantic mappings)
-// -----------------------------------------------------------------------------
-[data-theme="light"] {
-  // Use subtler backgrounds in light mode
-  --color-bg-surface: var(--ctp-mantle);
-  --color-bg-elevated: var(--ctp-mantle);
-  --color-bg-overlay: var(--ctp-crust);
+  // Code block tokens
+  --color-code-bg: var(--paper-2);
+  --color-code-border: var(--rule-soft);
+  --color-code-accent: var(--obligation);
+
+  // Radii
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  // Shadows
+  --shadow-sm: var(--shadow);
+  --shadow-md: var(--shadow);
+  --shadow-lg: var(--shadow);
+  --shadow-glow: 0 0 20px rgba(169, 155, 245, 0.15);
 }

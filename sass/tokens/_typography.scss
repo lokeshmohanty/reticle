@@ -1,18 +1,8 @@
 // =============================================================================
 // Design Tokens: Typography
-// Font families, sizes, weights, and line heights
+// Font sizes, weights, line heights, and letter spacing.
+// Font families are defined in base/_fonts.scss (three-role system).
 // =============================================================================
-
-// -----------------------------------------------------------------------------
-// Font Stacks
-// -----------------------------------------------------------------------------
-:root {
-  --font-sans: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo,
-    Consolas, "Liberation Mono", monospace;
-  --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
-}
 
 // -----------------------------------------------------------------------------
 // Font Sizes (modular scale ~1.25)
@@ -58,10 +48,12 @@
 :root {
   --tracking-tighter: -0.05em;
   --tracking-tight: -0.025em;
+  --tracking-display: -0.03em;  // the display face tracking
   --tracking-normal: 0;
   --tracking-wide: 0.025em;
   --tracking-wider: 0.05em;
   --tracking-widest: 0.1em;
+  --tracking-label: 0.13em;     // uppercase mono labels
 }
 
 // -----------------------------------------------------------------------------
@@ -70,20 +62,20 @@
 
 /// Base body text
 @mixin body-text {
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--text-md);
   font-weight: var(--font-normal);
   line-height: var(--leading-loose);
-  color: var(--color-text);
+  color: var(--ink);
 }
 
-/// Heading base styles
+/// Heading base styles — display face, medium weight, tight tracking
 @mixin heading-base {
-  font-family: var(--font-sans);
-  font-weight: var(--font-bold);
+  font-family: var(--font-display);
+  font-weight: var(--font-medium);
   line-height: var(--leading-tight);
-  color: var(--color-heading);
-  letter-spacing: var(--tracking-tight);
+  color: var(--ink);
+  letter-spacing: var(--tracking-display);
 }
 
 /// Heading sizes
@@ -134,10 +126,20 @@
   letter-spacing: var(--tracking-wide);
 }
 
+/// The utility voice: mono for labels, dates, counts, IDs
+@mixin label {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
 /// Small/caption text
 @mixin text-small {
   font-size: var(--text-sm);
-  color: var(--color-text-muted);
+  color: var(--ink-3);
 }
 
 /// Monospace/code text
@@ -147,28 +149,24 @@
   font-variant-numeric: tabular-nums;
 }
 
-/// Link styles
+/// Link styles — thesis-ui pattern: inherit color, underline with rule
 @mixin link {
-  color: var(--color-link);
-  text-decoration: none;
-  transition: color 0.2s ease;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--rule);
+  text-underline-offset: 0.18em;
+  transition: text-decoration-color 0.14s;
 
   &:hover {
-    color: var(--color-link-hover);
+    text-decoration-color: currentColor;
   }
 }
 
-/// Underline link (for body text)
+/// Underline link (alias for body links)
 @mixin link-underline {
-  color: var(--color-text);
-  text-decoration: none;
-  box-shadow: 0 -2px 0 var(--color-highlight) inset;
-  transition: box-shadow 0.2s ease;
-
-  &:hover {
-    box-shadow: 0 -1.2em 0 var(--color-highlight) inset;
-  }
+  @include link;
 }
+
 
 /// Truncate text with ellipsis
 @mixin truncate {

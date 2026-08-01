@@ -13,14 +13,14 @@
     <script src="{{ get_url(path='js/app.js') | safe }}"></script>
 </footer>
 {% else %}
-{# Original tanuki footer for docs/book/product modes #}
+{# Original reticle footer for docs/book/product modes #}
 <footer class="footer" role="contentinfo">
     <div class="container">
         <div class="footer__content">
             <p class="footer__copyright">
                 &copy; {{ now() | date(format="%Y") }} {{ config.extra.author.name | default(value=config.title) }}.
                 Built with <a href="https://www.getzola.org" target="_blank" rel="noopener noreferrer" aria-label="Zola static site generator (opens in new tab)">Zola</a>
-                and the <a href="https://github.com/lokeshmohanty/tanuki" target="_blank" rel="noopener noreferrer" aria-label="Tanuki theme on GitHub (opens in new tab)">Tanuki</a> theme.
+                and the <a href="https://github.com/lokeshmohanty/reticle" target="_blank" rel="noopener noreferrer" aria-label="Reticle theme on GitHub (opens in new tab)">Reticle</a> theme.
             </p>
 
             {% if config.extra.social_links %}
