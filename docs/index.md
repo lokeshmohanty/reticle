@@ -22,3 +22,12 @@ Welcome to the **Reticle** documentation. Reticle is an opinionated Zola theme b
    - `--obligation` (Violet): owed, pending, UI interaction accent & focus rings.
    - `--blocking` (Red): destructive, blocking action (used sparingly).
 4. **Signature Margin Tape**: A 3px left border (`.tape`) whose color signals the state of the content beside it.
+
+## Credits & Acknowledgments
+
+- **Design System & Palette**: Reticle Instrument-Reading system by Lokesh Mohanty
+- **AI Pair Engineering**: Developed with [Claude](https://anthropic.com) by Anthropic & [Antigravity](https://deepmind.google) by Google DeepMind
+- **Typography**: Space Grotesk, Nunito, Cascadia Code
+- **Iconography**: Lucide Icons
+- **Engine**: Zola Static Site Generator
+

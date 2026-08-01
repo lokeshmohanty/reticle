@@ -179,7 +179,7 @@ just build
 ## Credits
 
 - **Original theme structure**: Inspired by Zola theme patterns by Raffael Schneider ([raskell.io](https://raskell.io))
-- **Design System & Palette**: Reticle Instrument-Reading system by Lokesh Mohanty
+- **AI Pair Engineering**: Developed with [Claude](https://anthropic.com) by Anthropic & [Antigravity](https://deepmind.google) by Google DeepMind
 - **Typography**: [Space Grotesk](https://github.com/floriankarsten/space-grotesk), [Nunito](https://github.com/googlefonts/nunito), [Cascadia Code](https://github.com/microsoft/cascadia-code)
 - **Iconography**: [Lucide Icons](https://lucide.dev)
 - **Engine**: [Zola Static Site Generator](https://www.getzola.org)
