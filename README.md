@@ -190,4 +190,4 @@ just build
 
 ---
 
-<p align="center">Built with care by <a href="https://lokeshmohanty.dev">Lokesh Mohanty</a></p>
+<p align="center">Built with care by <a href="https://lokeshmohanty.in">Lokesh Mohanty</a></p>

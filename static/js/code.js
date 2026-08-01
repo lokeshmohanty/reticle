@@ -1,6 +1,6 @@
 // =============================================================================
-// Code Blocks - Lokesh Mohanty Theme
-// Copy button, language labels, and KDL playground integration
+// Code Blocks — Reticle Theme
+// Copy button, language labels, and KDL validation integration
 // =============================================================================
 
 (function() {
@@ -12,7 +12,6 @@
     check: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
     play: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
     edit: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>',
-    externalLink: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" x2="21" y1="14" y2="3"/></svg>',
     loading: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin"><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>'
   };
 
@@ -103,9 +102,6 @@
   let wasmLoading = false;
   let wasmLoadPromise = null;
 
-  // Playground URL
-  const PLAYGROUND_URL = 'https://sentinel.lokeshmohanty.dev/playground/';
-
   function getLanguageName(lang) {
     if (!lang) return null;
     const lower = lang.toLowerCase();
@@ -122,8 +118,6 @@
   // Pages where KDL validation should be skipped (partial snippets only)
   function shouldSkipValidation() {
     const path = window.location.pathname;
-    // Only skip validation on directive reference pages (partial snippets)
-    // Examples and getting-started pages now have complete, valid configs
     return path.includes('/reference/directives');
   }
 
@@ -156,20 +150,11 @@
     return wasm.validate(config);
   }
 
-  function encodeConfigForURL(config) {
-    return encodeURIComponent(btoa(config));
-  }
-
-  function getPlaygroundURL(config) {
-    return `${PLAYGROUND_URL}#config=${encodeConfigForURL(config)}`;
-  }
-
   async function copyToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
       return true;
     } catch (err) {
-      // Fallback for older browsers
       const textarea = document.createElement('textarea');
       textarea.value = text;
       textarea.style.cssText = 'position:fixed;left:-9999px';
@@ -210,15 +195,6 @@
     return button;
   }
 
-  function createPlaygroundLink() {
-    const link = document.createElement('a');
-    link.className = 'playground-link';
-    link.setAttribute('target', '_blank');
-    link.setAttribute('rel', 'noopener');
-    link.innerHTML = `${icons.externalLink}<span>Open in Playground</span>`;
-    return link;
-  }
-
   function setValidationState(button, state, message) {
     button.classList.remove('valid', 'invalid', 'loading', 'warning');
 
@@ -244,7 +220,7 @@
     }
   }
 
-  async function handleValidation(pre, code, validateBtn, playgroundLink) {
+  async function handleValidation(pre, code, validateBtn) {
     const config = code.textContent;
 
     setValidationState(validateBtn, 'loading');
@@ -258,14 +234,11 @@
         } else {
           setValidationState(validateBtn, 'valid');
         }
-        playgroundLink.href = getPlaygroundURL(config);
-        playgroundLink.style.display = 'flex';
       } else {
         const errorMsg = result.errors && result.errors[0]
           ? result.errors[0].message.split('\n')[0].substring(0, 30)
           : 'Invalid';
         setValidationState(validateBtn, 'invalid', 'Error');
-        playgroundLink.style.display = 'none';
       }
     } catch (e) {
       setValidationState(validateBtn, 'invalid', 'Load failed');
@@ -312,14 +285,9 @@
         const validateBtn = createValidateButton();
         buttonContainer.appendChild(validateBtn);
 
-        // Create playground link (hidden initially, appears after validation)
-        const playgroundLink = createPlaygroundLink();
-        playgroundLink.style.display = 'none';
-        buttonContainer.appendChild(playgroundLink);
-
         // Handle validate button click
         validateBtn.addEventListener('click', async () => {
-          await handleValidation(pre, code, validateBtn, playgroundLink);
+          await handleValidation(pre, code, validateBtn);
         });
 
         // Handle edit button click
@@ -334,7 +302,7 @@
             pre.classList.remove('editing');
 
             // Re-validate after editing
-            handleValidation(pre, code, validateBtn, playgroundLink);
+            handleValidation(pre, code, validateBtn);
           } else {
             // Enter edit mode
             code.contentEditable = 'true';
@@ -345,7 +313,6 @@
 
             // Reset validation state
             setValidationState(validateBtn, 'default');
-            playgroundLink.style.display = 'none';
           }
         });
 
@@ -353,7 +320,7 @@
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              handleValidation(pre, code, validateBtn, playgroundLink);
+              handleValidation(pre, code, validateBtn);
               observer.disconnect();
             }
           });

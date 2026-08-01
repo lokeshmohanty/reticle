@@ -39,7 +39,7 @@ show_hero = true
 # tagline = "A powerful tool for modern developers"
 # footer_description = "An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages."
 # license = "Licensed under Apache 2.0."
-# install_command = "curl -fsSL https://lokeshmohanty.dev/myproduct | sh"
+# install_command = "curl -fsSL https://lokeshmohanty.in/myproduct | sh"
 # install_alternatives = "Or download from <a href='https://github.com/lokeshmohanty/myproduct/releases'>GitHub Releases</a>"
 # features_title = "Features"
 # features = [
