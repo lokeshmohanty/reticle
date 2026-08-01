@@ -1,24 +1,27 @@
 <div align="center">
 
 <h1 align="center">
-  <img src="static/img/reticle-icon.png" alt="reticle mascot" width="96" />
+  <img src="static/img/reticle-icon.png" alt="Reticle logo" width="96" />
   <br>
   Reticle
 </h1>
 
 <p align="center">
-  <em>An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.</em>
+  <em>An instrument-reading design system for Zola — Space Grotesk + Nunito + Cascadia Code typography, semantic state accents (proved/obligation/blocking), and the margin-tape signature element. Supports documentation (with versioning), e-books, blogs, and product landing pages.</em>
 </p>
 
 <p align="center">
   <a href="https://www.getzola.org/">
     <img alt="Zola" src="https://img.shields.io/badge/Zola-0.19+-000000?logo=zola&logoColor=white&style=for-the-badge">
   </a>
-  <a href="https://reticle.com/">
-    <img alt="Catppuccin" src="https://img.shields.io/badge/Catppuccin-cba6f7?style=for-the-badge">
+  <a href="tokens/reticle.css">
+    <img alt="Design System" src="https://img.shields.io/badge/Design_System-Instrument_Reading-5340bb?style=for-the-badge">
+  </a>
+  <a href="sass/base/_fonts.scss">
+    <img alt="Typography" src="https://img.shields.io/badge/Typography-Space_Grotesk_|_Nunito_|_Cascadia-0e6b5e?style=for-the-badge">
   </a>
   <a href="LICENSE">
-    <img alt="License" src="https://img.shields.io/badge/License-MIT-a6e3a1?style=for-the-badge">
+    <img alt="License" src="https://img.shields.io/badge/License-MIT-0e6b5e?style=for-the-badge">
   </a>
 </p>
 
@@ -33,20 +36,31 @@
 
 </div>
 
-![Reticle Theme](screenshot.png)
+![Reticle Theme Screenshot](screenshot.png)
 
 ## Features
 
-- **Three Modes** — Documentation (with versioning), Book, and Blog layouts
-- **Catppuccin Colors** — Soothing Mocha (dark) and Latte (light) palettes
-- **Geist Typography** — Clean, readable variable fonts
-- **Lucide Icons** — Crisp, consistent iconography
-- **Resizable Sidebar** — Drag to resize, persists across sessions
-- **Full-text Search** — Elasticlunr-powered instant search
-- **Dark/Light Toggle** — Three-way toggle with system preference detection
-- **Print Support** — Print all pages as a single document (docs/book modes)
-- **Keyboard Navigation** — Arrow keys for prev/next, `/` for search
-- **SEO & Accessibility** — JSON-LD structured data, ARIA landmarks, semantic HTML
+- **Four Modes** — Documentation (with versioning), Book, Blog, and Product Landing Page layouts
+- **Instrument-Reading Color System** — Cool blueprint-paper ground (`--paper`), petrol ink (`--ink`), and 3 semantic accents (`--proved`, `--obligation`, `--blocking`)
+- **Three-Role Typography** — **Space Grotesk** (display headings), **Nunito** (prose body text), and **Cascadia Code** (utility voice: dates, counts, IDs, tags, code)
+- **Signature Margin Tape** — 3px left status rail (`.tape`) for scanability without noisy badge clutter
+- **Portable Tokens** — Standalone CSS custom properties (`tokens/reticle.css`) & TOML palettes (`tokens/reticle-dark.toml`, `tokens/reticle-light.toml`)
+- **Resizable Sidebar** — Drag to resize documentation sidebar, persists across user sessions
+- **Full-Text Search** — Elasticlunr-powered instant client-side search with modal overlay
+- **Dark/Light Theme** — Seamless three-way toggle (`dark` / `light` / `auto`) with system preference detection
+- **Keyboard Navigation** — `/` for search, `Esc` to dismiss, arrow key page navigation
+- **SEO & Accessibility** — JSON-LD structured schemas, ARIA landmarks, OpenGraph, Twitter Cards, semantic HTML5
+
+## Portable Tokens
+
+Reticle ships standalone design system tokens under `tokens/` that can be imported into any application or used across other projects:
+
+```css
+/* Import in any web app — no build step required */
+@import "path/to/tokens/reticle.css";
+```
+
+Or consume the TOML theme files (`tokens/reticle-dark.toml`, `tokens/reticle-light.toml`) for terminal, editor, or desktop client theming.
 
 ## Installation
 
@@ -55,7 +69,7 @@ cd your-zola-site
 git clone https://github.com/lokeshmohanty/reticle themes/reticle
 ```
 
-Or as a git submodule:
+Or as a Git submodule:
 
 ```bash
 git submodule add https://github.com/lokeshmohanty/reticle themes/reticle
@@ -139,18 +153,18 @@ url = "/about/"
 
 ## Development
 
-This repository includes a `shell.nix` file for Nix users.
+This repository includes a Nix flake (`flake.nix`) and dev environment.
 
 ```bash
 # Enter development shell (provides Zola and Just)
-nix-shell
+nix develop
 
 # Serve example sites with Just
 just serve-blog   # Serve blog on http://127.0.0.1:1113
 just serve-docs   # Serve docs on http://127.0.0.1:1111
 just serve-book   # Serve book on http://127.0.0.1:1112
 
-# Build all example sites
+# Build all example sites into public/
 just build
 ```
 
@@ -159,20 +173,16 @@ just build
 | Key | Action |
 |-----|--------|
 | `←` / `→` | Previous / Next page |
-| `/` | Open search |
-| `Esc` | Close overlays |
-
-## Browser Support
-
-Modern browsers (Chrome 88+, Firefox 78+, Safari 14+, Edge 88+)
+| `/` | Open search modal |
+| `Esc` | Close search / navigation overlays |
 
 ## Credits
 
-- [Reticle Theme](https://github.com/raskell-io/reticle) by [raskell.io](https://raskell.io) (Raffael Schneider) — Original theme creator
-- [Catppuccin](https://reticle.com) — Color palette
-- [Geist](https://vercel.com/font) — Typography
-- [Lucide](https://lucide.dev) — Icons
-- [Zola](https://www.getzola.org) — Static site generator
+- **Original theme structure**: Inspired by Zola theme patterns by Raffael Schneider ([raskell.io](https://raskell.io))
+- **Design System & Palette**: Reticle Instrument-Reading system by Lokesh Mohanty
+- **Typography**: [Space Grotesk](https://github.com/floriankarsten/space-grotesk), [Nunito](https://github.com/googlefonts/nunito), [Cascadia Code](https://github.com/microsoft/cascadia-code)
+- **Iconography**: [Lucide Icons](https://lucide.dev)
+- **Engine**: [Zola Static Site Generator](https://www.getzola.org)
 
 ## License
 
@@ -180,4 +190,4 @@ Modern browsers (Chrome 88+, Firefox 78+, Safari 14+, Edge 88+)
 
 ---
 
-<p align="center">Made with care by <a href="https://lokeshmohanty.dev">Lokesh Mohanty</a></p>
+<p align="center">Built with care by <a href="https://lokeshmohanty.dev">Lokesh Mohanty</a></p>

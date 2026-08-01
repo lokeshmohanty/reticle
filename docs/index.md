@@ -1,14 +1,24 @@
-# reticle — Documentation
+# Reticle — Documentation
 
-*Last synced: never (freshly scaffolded). Refresh with the `docs-sync` skill.*
+*Last updated: 2026-08-02 (Reticle Revamp)*
 
-Entry point for all project documentation. Any LLM should be able to answer
-questions about this project from this folder alone.
+Welcome to the **Reticle** documentation. Reticle is an opinionated Zola theme built around the **instrument-reading design system**: blueprint-paper ground (`--paper`), petrol ink (`--ink`), semantic state accents (`--proved`, `--obligation`, `--blocking`), three role-based typography families, and the signature **margin tape** rail element.
 
-## Contents
+## Table of Contents
 
-- (nothing yet — docs-sync will populate: architecture, how-to/, reference/, decisions)
+- [Architecture & Design System](architecture.md) — Directory layout, SCSS compilation, typography roles, and palette tokens
+- [Design Tokens Reference](tokens.md) — Portable CSS (`reticle.css`), TOML definitions (`reticle-dark.toml`, `reticle-light.toml`), and semantic usage rules
+- [Usage & Configuration Guide](usage.md) — Site modes (`docs`, `book`, `blog`, `product`), versioning, search setup, and local development with Nix
 
-## Honest gaps
+## Key Principles
 
-- Everything. This is a scaffold.
+1. **Three Type Roles**:
+   - `Display` (**Space Grotesk**): Headings, titles, wordmarks, post titles.
+   - `Running Text` (**Nunito**): Body copy, prose, list items, descriptions.
+   - `Utility Voice` (**Cascadia Code**): Eyebrows, dates, counts, tags, run IDs, metrics, inline code, code blocks.
+2. **Role-Based Token Naming**: Tokens are named semantically by function (`--font-display`, `--font-body`, `--font-mono`, `--ink-2`, `--proved`), never by color hue or classification.
+3. **Semantic Accents**:
+   - `--proved` (Teal): confirmed, cleared, done.
+   - `--obligation` (Violet): owed, pending, UI interaction accent & focus rings.
+   - `--blocking` (Red): destructive, blocking action (used sparingly).
+4. **Signature Margin Tape**: A 3px left border (`.tape`) whose color signals the state of the content beside it.
